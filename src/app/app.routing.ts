@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { SessionService } from './session.service';
+import { SessionService } from './services/session.service';
 import { IndexComponent } from './index/index.component';
 import { MainComponent } from './main/main.component';
 import { UserComponent } from './user/user.component';
