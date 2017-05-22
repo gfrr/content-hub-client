@@ -1,0 +1,20 @@
+.input-group{
+  padding-top: 28vh;
+  display: inline-block;;;
+  text-align:center;
+}
+.tag-editor-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.search-container{
+  width: 60vw;
+}
+.class-editor,.multi-ine{
+  width: 500px;
+  min-height: 33px;
+  max-height:100px;
+
+}
