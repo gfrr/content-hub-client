@@ -1,21 +1,22 @@
-<p>
-  login works!
-</p>
 
-<div class="col-md-3 col-md-offset-4">
-	<div class="panel panel-default">
-	  <div class="panel-body">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <div class="container">
+          <div class="card card-container">
+              <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <br />
+
 	    <form>
 	      <div class="form-group">
-	        <label for="InputUsername">username</label>
+	        <label class="label-username" for="InputUsername">username</label>
 	        <input type="email" class="form-control" id="InputUsername" placeholder="username" [(ngModel)]="user.username" name="username">
 	      </div>
 	      <div class="form-group">
-	        <label for="InputPassword">Password</label>
+	        <label class="label-password" for="InputPassword">Password</label>
 	        <input type="password" class="form-control" id="InputPassword" placeholder="Password" [(ngModel)]="user.password" name="password">
 	      </div>
-	      <button type="submit" class="btn btn-default btn-primary" (click)="login()">Login</button>
+	      <button type="submit" class="btn btn-login btn-default btn-primary" (click)="login()">Login</button>
 	    </form>
-	  </div>
-	</div>
-</div>
+    </div><!-- /card-container -->
+  </div><!-- /container -->
