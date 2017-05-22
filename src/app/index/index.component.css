@@ -10,7 +10,8 @@
   width: 100vw;
 }
 .search-container{
-  width: 60vw;
+  width: 80vw;
+  max-width: 450px;
 }
 .class-editor,.multi-ine{
   width: 500px;
