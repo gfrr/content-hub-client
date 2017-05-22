@@ -12,6 +12,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SessionService } from './session.service';
 import { FileSelectDirective } from "ng2-file-upload";
+import { DashboardComponent } from './auth/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FileSelectDirective } from "ng2-file-upload";
     MainComponent,
     UserComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
