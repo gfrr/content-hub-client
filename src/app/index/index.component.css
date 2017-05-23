@@ -2,6 +2,9 @@
 h1{
   color: white;
 }
+input{
+  border-radius: 0;
+}
 .input-wrapper{
   align-items: center;
   text-align: center;
@@ -30,6 +33,7 @@ h1{
   width: 60vw;
   min-height: 33px;
   max-height:100px;
+  border-radius: 0;
 }
 /* input group END*/
 /* START carousel*/
@@ -72,7 +76,7 @@ h1{
 }
 .carousel .active.left {
     left:0;
-    opacity:0;
-    z-index:2;
+    opacity:0.5;
+    z-index:-99;
 }
 /* carousel END */
