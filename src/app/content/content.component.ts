@@ -7,6 +7,7 @@ import { SessionService } from '../services/session.service';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+
   public searchTags: string = "";
   public result:any;
   testRequestId: string = "";
@@ -26,4 +27,5 @@ export class ContentComponent implements OnInit {
     });
 
   }
+
 }

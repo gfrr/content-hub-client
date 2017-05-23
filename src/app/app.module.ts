@@ -13,8 +13,10 @@ import { SessionService } from './services/session.service';
 import { FileSelectDirective } from "ng2-file-upload";
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { SafePipe } from './safe.pipe';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { SafePipe } from './safe.pipe';
     LoginComponent,
     DashboardComponent,
     ContentComponent,
-    SafePipe,
+    NavBarComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
