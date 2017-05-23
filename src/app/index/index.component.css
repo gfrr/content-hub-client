@@ -1,21 +1,78 @@
-.input-group{
-  padding-top: 28vh;
-  display: inline-block;;;
-  text-align:center;
+/* START input group */
+h1{
+  color: white;
 }
-.tag-editor-wrapper{
-  display: flex;
+.input-wrapper{
   align-items: center;
-  justify-content: center;
-  width: 100vw;
+  text-align: center;
 }
+.input-group{
+  padding: 20px;
+  max-width: 600px;
+  width: 90vw;
+
+  margin-top: 28vh;
+  display: inline-block;
+  /*text-align: center;*/
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .search-container{
-  width: 80vw;
-  max-width: 450px;
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
 }
-.class-editor,.multi-ine{
-  width: 500px;
+.tag-editor,.multi-ine{
+  display: inline-block;
+  text-align: center;
+  max-width: 500px;
+  width: 60vw;
   min-height: 33px;
   max-height:100px;
+}
+/* input group END*/
+/* START carousel*/
+/*from https://stackoverflow.com/questions/19469705/bootstrap-carousel-as-website-background*/
+.carousel { z-index: -99; } /* keeps this behind all content */
+.carousel .item {
+    position: fixed;
+    width: 100vw; height: 100vh;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
 
 }
+.carousel .one {
+    background: url(/assets/images/london.jpg);
+    background-size: cover;
+    /*-moz-background-size: cover;*/
+}
+.carousel .two {
+    background: url(/assets/images/berlin.jpg);
+    background-size: cover;
+    /*-moz-background-size: cover;*/
+}
+.carousel .three {
+    background: url(/assets/images/elephant.jpg);
+    background-size: cover;
+    /*-moz-background-size: cover;*/
+}
+.carousel .four {
+    background: url(/assets/images/beach.jpg);
+    background-size: cover;
+    /*-moz-background-size: cover;*/
+}
+.carousel .five {
+    background: url(/assets/images/food.jpg);
+    background-size: cover;
+    /*-moz-background-size: cover;*/
+}
+.carousel .active.left {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+/* carousel END */

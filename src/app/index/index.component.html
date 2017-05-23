@@ -1,12 +1,21 @@
 
-<div class="input-group">
-      <h1 class="header">What are your interests?</h1>
-      <br>
-      <div class="tag-editor-wrapper">
-        <input autocomplete="off" class="tag-editor js-tag-editor" data-separator=" " id="tl" maxlength="240" name="tl" placeholder="Add up to 10 (e.g. html, c#)" type="text" value="" style="display: none;">
-          <div class="tag-editor multi-line" ><span></span>
-            <input class="search-container" type="text" tabindex="0" placeholder="Search for interesting tags">
-            <span></span>
-          </div>
-      </div><!-- / tag-editor-wrapper -->
-</div><!-- / input-group -->
+<div id="myCarousel" class="carousel container slide">
+  <div class="carousel-inner">
+          <div class="active item one"></div>
+          <div class="item two"></div>
+          <div class="item three"></div>
+          <div class="item four"></div>
+          <div class="item five"></div>
+  </div>
+</div><!-- / carousel container slide -->
+<div class="input-wrapper">
+    <div class="input-group">
+          <h1 class="header">What are your interests?</h1>
+
+            <input autocomplete="off" class="tag-editor js-tag-editor" data-separator=" " id="tl" maxlength="240" name="tl" placeholder="Add up to 10 (e.g. html, c#)" type="text" value="" style="display: none;">
+              <div class="tag-editor multi-line" >
+                <input class="search-container" type="text" tabindex="0" placeholder="Search for interesting tags">
+                <span></span>
+              </div>
+    </div><!-- / input-group -->
+</div><!-- / input-wrapper -->

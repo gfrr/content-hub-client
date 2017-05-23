@@ -15,6 +15,7 @@ import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
