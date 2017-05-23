@@ -30,9 +30,12 @@ export class SignupComponent implements OnInit {
   	this.session.signup(this.newUser)
       .subscribe(result => {
           if (result === true) {
-              // login successful
               console.log('result ok', result);
-              this.router.navigate(['']);
+              this.session.login(this.newUser)
+          				        .subscribe(result => {
+          				            if (result === true) this.router.navigate(['/index']);
+          			         			else this.error = 'something went wrong';
+          				        });
           } else console.log('result ko', result);
       });
   }

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/catch';
 import { Router, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import jwtDecode from 'jwt-decode';
-// const jwtDecode = require('jwt-decode');
+
 
 
 
@@ -83,6 +83,13 @@ export class SessionService implements CanActivate {
               // return true to indicate successful login
               return true;
             } else return false;   // return false to indicate failed login
+        });
+  }
+
+  search(query){
+    return this.http.post(`${this.BASE_URL}/search`, query)
+        .map((response: Response)=>{
+           return response.json();
         });
   }
 
