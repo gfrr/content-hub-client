@@ -14,6 +14,8 @@ import { FileSelectDirective } from "ng2-file-upload";
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { SafePipe } from './safe.pipe';
 
 
 @NgModule({
@@ -25,15 +27,19 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     LoginComponent,
     DashboardComponent,
     ContentComponent,
-    NavBarComponent
+    NavBarComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
-  providers: [SessionService],
+  providers: [ SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
