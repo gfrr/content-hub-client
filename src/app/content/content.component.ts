@@ -7,11 +7,11 @@ import { SessionService } from '../services/session.service';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-
   public searchTags: string = "";
-  public result:any;
-  testRequestId: string = "";
-
+  result: any;
+  index: number = 0;
+  videoId: string = "";
+  hidden: boolean = true;
   constructor(
     private session: SessionService,
   ) { }
@@ -20,12 +20,19 @@ export class ContentComponent implements OnInit {
   }
   search(){
     this.session.search({search: this.searchTags}).subscribe(result => {
-      this.result = result;
       console.log(result);
-      console.log(result.items["0"].id.videoId);
-      this.testRequestId = result.items["0"].id.videoId;
-    });
 
+      this.result = result.items;
+      this.videoId = this.result[this.index].id.videoId;
+      this.index++;
+      console.log(this.result);
+      this.hidden = false;
+    });
   }
 
+  next(){
+    if(this.index == this.result.length - 1) this.index = 0;
+    this.videoId = this.result[this.index].id.videoId;
+    this.index++;
+  }
 }
