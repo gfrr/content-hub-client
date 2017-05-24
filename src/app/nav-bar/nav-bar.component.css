@@ -6,15 +6,17 @@
   background-color: #28586f;
 }
 ul li span{
+  
   color: white;
 }
 ul li a{
+  font-family: 'Patua One', cursive;
     color: white;
 }
 
+
 .navbar-brand{
-}
-.navbar-brand{
+  font-family: 'Patua One', cursive;
   color:white;
 }
 .navbar-header{
