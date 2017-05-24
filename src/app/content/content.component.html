@@ -11,5 +11,16 @@
          <iframe [src]="'https://www.youtube.com/embed/' + videoId | safe" width="560" height="315" allowfullscreen></iframe>
          <button (click)="next()">Next!</button>
        </div>
+       <div class="tw">
 
+        <blockquote class="twitter-tweet">
+          <p lang="en" dir="ltr">
+            {{tweet}}
+          </p>
+        </blockquote>
+
+       </div>
      </div>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
