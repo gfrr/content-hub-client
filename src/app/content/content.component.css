@@ -1,6 +1,42 @@
+.content-wrapper{
+  width:100vw;
+  background-color:lightgrey;
+}
+.search-video-cont{
+  padding:0px;
+  margin:0px;
+  background-color:rgba(255, 0, 0, 0.1);
+
+}
+.row{
+  margin:0px;
+  padding:0px;
+}
 .search {
   text-align: center;
   display: flex;
   flex-flow: column;
   justify-content: center;
+}
+/*side bar START*/
+.side-left{
+  height:100px;
+background-color:rgba(255, 0, 0, 0.2);
+}
+.side-right{
+  height:100px;
+background-color:rgba(200, 110, 0, 0.2);
+}
+/*side bar END*/
+.yt-wrappe{
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  border: 1px dotted black;
+}
+iframe{
+  max-width:85vw;
+  height:auto;
+  width:504px;
+
 }

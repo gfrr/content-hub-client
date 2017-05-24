@@ -1,7 +1,18 @@
 /*navbar start*/
 .navbar{
+  width:100vw;
   z-index:2;
-  margin:0;
+  margin:0px;
+  background-color: #28586f;
+}
+ul li span{
+  color: white;
+}
+ul li a{
+    color: white;
+}
+
+.navbar-brand{
 }
 .navbar-brand{
   color:white;
