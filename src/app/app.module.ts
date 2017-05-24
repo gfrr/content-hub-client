@@ -15,7 +15,9 @@ import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { SafePipe } from './safe.pipe';
+import { SafePipe } from './pipes/safe.pipe';
+// import { Ng2TweetModule } from 'ng2-tweet';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { SafePipe } from './safe.pipe';
     DashboardComponent,
     ContentComponent,
     NavBarComponent,
-    SafePipe
+    SafePipe,
+    // Ng2TweetModule
   ],
   imports: [
     BrowserModule,
