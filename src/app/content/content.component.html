@@ -9,31 +9,35 @@
                <input id="search_tags" placeholder="search tags" type="text" [(ngModel)]="searchTags">
                 <button id="search-button" (click)="search()">Search</button>
              </div><!-- search -->
-
+          <div *ngIf=!hidden>
             <div class="yt-wrapper">
-                <div *ngIf=!hidden><!-- video frame -->
+                <!-- video frame -->
                    <div class="yt">
-                     <iframe [src]="'https://www.youtube.com/embed/' + videoId | safe" allowfullscreen></iframe>
-                     <button (click)="next()">Next!</button>
+                     <iframe [src]="'https://www.youtube.com/embed/' + videoId | safe"  width="560" height="315" allowfullscreen></iframe>
+
                    </div>
                </div>
-            </div> <!-- video frame -->
+            <!-- video frame -->
          <div class="tw">
+           <div *ngIf="!isLoadingTweet">
+             <p>
+               loading
+             </p>
+           </div>
+           <div *ngIf="isLoadingTweet">
+             <app-tweet  [tweet]=tweet></app-tweet>
+           </div>
 
-        <blockquote class="twitter-tweet">
-          <p lang="en" dir="ltr">
-            {{tweet}}
-          </p>
-        </blockquote>
 
-       </div>
+           </div>
+           <button (click)="next()">Next!</button>
+           </div>
       </div><!-- col-xs-12 col-md-10 -->
-      
-      
+
+
 
       <div class="side-right col-xs-6 col-sm-2 ">
       </div><!-- col-xs-12 col-md-10 -->
     </div><!-- row -->
   </div><!-- container -->
 </div><!-- content-wrapper -->
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

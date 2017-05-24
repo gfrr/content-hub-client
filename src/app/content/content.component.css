@@ -1,5 +1,5 @@
 .content-wrapper{
-  width:100vw;
+  /*width:100vw;*/
   background-color:lightgrey;
 }
 .search-video-cont{
@@ -35,8 +35,8 @@ background-color:rgba(200, 110, 0, 0.2);
   border: 1px dotted black;
 }
 iframe{
-  max-width:85vw;
-  height:auto;
-  width:504px;
+  /*max-width:85vw;*/
+  /*height:auto;
+  width:504px;*/
 
 }
