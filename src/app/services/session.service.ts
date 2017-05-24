@@ -86,8 +86,14 @@ export class SessionService implements CanActivate {
         });
   }
 
-  search(query){
-    return this.http.post(`${this.BASE_URL}/search`, query)
+  searchYoutube(query){
+    return this.http.post(`${this.BASE_URL}/search/youtube`, query)
+        .map((response: Response)=>{
+           return response.json();
+        });
+  }
+  searchTwitter(query){
+    return this.http.post(`${this.BASE_URL}/search/twitter`, query)
         .map((response: Response)=>{
            return response.json();
         });
