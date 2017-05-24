@@ -18,6 +18,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { SafePipe } from './pipes/safe.pipe';
 import { TwitterPipe } from './pipes/twitter.pipe';
 import { TweetComponent } from './tweet/tweet.component';
+import { YoutubeComponent } from './youtube/youtube.component';
+import { RedditComponent } from './reddit/reddit.component';
 
 
 
@@ -35,6 +37,8 @@ import { TweetComponent } from './tweet/tweet.component';
     SafePipe,
     TwitterPipe,
     TweetComponent,
+    YoutubeComponent,
+    RedditComponent,
     // Ng2TweetModule
   ],
   imports: [

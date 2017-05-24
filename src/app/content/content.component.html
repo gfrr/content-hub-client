@@ -10,14 +10,18 @@
                 <button id="search-button" (click)="search()">Search</button>
              </div><!-- search -->
           <div *ngIf=!hidden>
-            <div class="yt-wrapper">
-                <!-- video frame -->
-                   <div class="yt">
-                     <iframe [src]="'https://www.youtube.com/embed/' + videoId | safe"  width="560" height="315" allowfullscreen></iframe>
+            <div class="yt">
+            <div *ngIf="!isLoadingYt">
+              <p>
+                loading
+              </p>
+            </div>
+            <div *ngIf="isLoadingYt">
 
-                   </div>
-               </div>
-            <!-- video frame -->
+                <app-youtube [video]=videoId></app-youtube>
+
+            </div>  <!-- video frame -->
+            </div>
          <div class="tw">
            <div *ngIf="!isLoadingTweet">
              <p>
@@ -27,9 +31,17 @@
            <div *ngIf="isLoadingTweet">
              <app-tweet  [tweet]=tweet></app-tweet>
            </div>
-
-
            </div>
+          <div class="reddit">
+            <div *ngIf="!isLoadingReddit">
+              <p>
+                loading
+              </p>
+            </div>
+            <div *ngIf="isLoadingReddit">
+              <app-reddit  [reddit]=reddit></app-reddit>
+            </div>
+          </div>
            <button (click)="next()">Next!</button>
            </div>
       </div><!-- col-xs-12 col-md-10 -->
