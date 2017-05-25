@@ -20,6 +20,9 @@ import { TwitterPipe } from './pipes/twitter.pipe';
 import { TweetComponent } from './tweet/tweet.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { RedditComponent } from './reddit/reddit.component';
+import { TumblrComponent } from './tumblr/tumblr.component';
+import { EditComponent } from './auth/dashboard/edit/edit.component';
+import { DeleteComponent } from './auth/dashboard/delete/delete.component';
 
 
 
@@ -39,6 +42,9 @@ import { RedditComponent } from './reddit/reddit.component';
     TweetComponent,
     YoutubeComponent,
     RedditComponent,
+    TumblrComponent,
+    EditComponent,
+    DeleteComponent,
     // Ng2TweetModule
   ],
   imports: [

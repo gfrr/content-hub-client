@@ -14,5 +14,5 @@ export const routes: Routes = [
     { path: "dashboard", component: DashboardComponent, canActivate: [SessionService]},
     { path: "login", component: LoginComponent},
     { path: "user/:id", component: UserComponent},
-    { path: "content", component: ContentComponent}
+    { path: "content", component: ContentComponent, canActivate: [SessionService]}
 ];
