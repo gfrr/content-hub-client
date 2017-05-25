@@ -1,0 +1,21 @@
+.pic {
+  width: 250px;
+  height: 180px;
+}
+
+
+.reddit-content {
+  display: flex;
+  flex-flow: column;
+}
+
+
+.foot  {
+  display: flex;
+  justify-content: space-around;
+}
+
+#right {
+  display: flex;
+  flex-flow: column;
+}
