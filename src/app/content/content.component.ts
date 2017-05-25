@@ -11,11 +11,15 @@ export class ContentComponent implements OnInit {
   public searchTags: string = "";
   public result: any;
   public tweets: any;
+  public redditPosts: any;
   index: number = 0;
   public videoId: string = "";
   public tweet: string = "";
+  public reddit: any;
   hidden: boolean = true;
   isLoadingTweet: boolean = false;
+  isLoadingYt: boolean = false;
+  isLoadingReddit: boolean = false;
   constructor(
     private session: SessionService,
     // private ng2TweetService: Ng2TweetService
@@ -25,26 +29,26 @@ export class ContentComponent implements OnInit {
   }
   search(){
     this.isLoadingTweet = false;
+    this.isLoadingYt = false;
+    this.isLoadingReddit = false;
     this.index = 0;
     this.session.searchYoutube({search: this.searchTags}).subscribe(result => {
-      console.log(result);
-
       this.result = result.items;
       this.videoId = this.result[this.index].id.videoId;
-
-      console.log(this.result);
-
+      this.isLoadingYt = true;
     });
 
     this.session.searchTwitter({hashtag: this.searchTags}).subscribe(result =>  {
-
       this.tweets = result.statuses;
-      console.log(this.tweets);
       this.tweet = this.tweets[this.index];
-      console.log(this.tweet);
       this.isLoadingTweet = true;
     });
 
+    this.session.searchReddit({hashtag: this.searchTags}).subscribe(result => {
+      this.redditPosts = result.data.children;
+      this.reddit = this.redditPosts[this.index];
+      this.isLoadingReddit = true;
+    });
     this.index++;
     this.hidden = false;
   }
@@ -53,6 +57,7 @@ export class ContentComponent implements OnInit {
     if(this.index == this.tweets.length - 1) this.index = 0;
     this.videoId = this.result[this.index].id.videoId;
     this.tweet = this.tweets[this.index];
+    this.reddit = this.redditPosts[this.index];
     this.index++;
   }
 }

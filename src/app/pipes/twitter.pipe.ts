@@ -9,9 +9,6 @@ export class TwitterPipe implements PipeTransform {
   transform(input: any, args?: any): any {
 
     var result = input.split(" ");
-
-    console.log(result);
-
     result = result.map((word)=>{
         if(word.match(/https/g)) word = `<a href=${word}>${word}</a>`;
         word = word.replace(/(@)\w+/g, `<a href="https://twitter.com/${word.substring(1)}">${word}</a>`);
