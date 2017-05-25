@@ -22,7 +22,7 @@
         </div><!-- search -->
 
         <div class="yt-wrapper">
-          <div *ngIf=hidden><!-- video frame -->
+          <div *ngIf=!hidden><!-- video frame -->
               <iframe [src]="'https://www.youtube.com/embed/' + videoId | safe" allowfullscreen></iframe>
           </div>
         </div> <!-- yt-wrapper -->
