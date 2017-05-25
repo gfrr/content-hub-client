@@ -86,6 +86,16 @@ export class SessionService implements CanActivate {
         });
   }
 
+  logout() {
+      this.token = null;
+      this.user = null;
+      this.isAuth = false;
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      this.router.navigate(['/login']);
+  }
+
+  //search queries
   searchYoutube(query){
     return this.http.post(`${this.BASE_URL}/search/youtube`, query)
         .map((response: Response)=>{
@@ -99,12 +109,10 @@ export class SessionService implements CanActivate {
         });
   }
 
-  logout() {
-      this.token = null;
-      this.user = null;
-      this.isAuth = false;
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      this.router.navigate(['/login']);
+  searchReddit(query){
+    return this.http.post(`${this.BASE_URL}/search/reddit`, query)
+      .map((response: Response)=>{
+        return response.json();
+      });
   }
 }

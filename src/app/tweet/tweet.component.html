@@ -1,0 +1,6 @@
+
+<div class="twitter-tweet" [innerHTML]= "tweet['text'] | twitter">
+
+</div>
+<p>&mdash; {{tweet["user"].name}} @{{tweet["user"].screen_name }}</p>
+<a target= "_blank" href="https://twitter.com/{{this.tweet['user'].id_str}}/status/{{this.tweet['id_str']}}">{{tweet["created_at"] | date}}</a>

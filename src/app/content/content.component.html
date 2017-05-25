@@ -21,38 +21,77 @@
           <button class="search-btn" (click)="next()">Next!</button>
         </div><!-- search -->
 
-        <div class="yt-wrapper">
-          <div *ngIf=!hidden><!-- video frame -->
-              <iframe [src]="'https://www.youtube.com/embed/' + videoId | safe" allowfullscreen></iframe>
+      <!-- youtube start -->
+        <div *ngIf=!hidden>
+          <div class="yt-wrapper">
+              <div *ngIf="!isLoadingYt">
+                <p>
+                  loading
+                </p>
+              </div>
+              <div *ngIf="isLoadingYt">
+                <app-youtube [video]=videoId></app-youtube>
+              </div>  <!-- ngif loading -->
+          </div> <!-- yt-wrapper -->
+    <!-- youtube end -->
+    <!-- twitter start  -->
+            <div class="tw">
+              <div *ngIf="!isLoadingTweet">
+                <p>
+                  loading
+                </p>
+              </div>
+              <div *ngIf="isLoadingTweet">
+                <app-tweet  [tweet]=tweet></app-tweet>
+              </div>
+            </div>
+    <!-- twitter end  -->
+    <!-- reddit start -->
+            <div class="reddit">
+              <div *ngIf="!isLoadingReddit">
+                <p>
+                  loading
+                </p>
+              </div>
+              <div *ngIf="isLoadingReddit">
+                <app-reddit  [reddit]=reddit></app-reddit>
+              </div>
+            </div>
+  <!-- REDDIT END -->
           </div>
-        </div> <!-- yt-wrapper -->
-      </div><!-- col-xs-12 col-md-10 -->
-      <div class="col-xs-12 col-sm-3 ">
-        <div class="row">
-          <div class="side-right col-xs-6 col-sm-6 ">
-            <div class="popular-tags">
-              <h5>Trending tags:</h5>
-              <ul>
-                <li>Weapons</li>
-                <li>Mechanical keyboards</li>
-                <li>Nikes</li>
-                <li>Elephants</li>
-              </ul>
-            </div><!-- popular-tag -->
-          </div><!-- side-right col-xs-12 col-sm-2 -->
-          <div class="side-right col-xs-6 col-sm-6 ">
-            <div class="popular-tags">
-              <h5>Most popular tags:</h5>
-              <ul>
-                <li>Trump</li>
-                <li>Mechanical keyboards</li>
-                <li>Dogs</li>
-                <li>Rubiks cube</li>
-              </ul>
-            </div><!-- popular-tag -->
-          </div><!-- side-right col-xs-12 col-sm-2 -->
-        </div><!-- row -->
-      </div><!-- col-xs-12 col-sm-2 -->
-    </div><!-- row -->
-  </div><!-- container -->
-</div><!-- content-wrapper -->
+        </div><!-- col-xs-12 col-md-10 -->
+
+
+
+
+        <div class="side-right col-xs-6 col-sm-2 ">
+        </div><!-- col-xs-12 col-md-10 -->
+        <div class="col-xs-12 col-sm-3 ">
+          <div class="row">
+            <div class="side-right col-xs-6 col-sm-6 ">
+              <div class="popular-tags">
+                <h5>Trending tags:</h5>
+                <ul>
+                  <li>Weapons</li>
+                  <li>Mechanical keyboards</li>
+                  <li>Nikes</li>
+                  <li>Elephants</li>
+                </ul>
+              </div><!-- popular-tag -->
+            </div><!-- side-right col-xs-12 col-sm-2 -->
+            <div class="side-right col-xs-6 col-sm-6 ">
+              <div class="popular-tags">
+                <h5>Most popular tags:</h5>
+                <ul>
+                  <li>Trump</li>
+                  <li>Mechanical keyboards</li>
+                  <li>Dogs</li>
+                  <li>Rubiks cube</li>
+                </ul>
+              </div><!-- popular-tag -->
+            </div><!-- side-right col-xs-12 col-sm-2 -->
+          </div><!-- row -->
+        </div><!-- col-xs-12 col-sm-2 -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- content-wrapper -->
