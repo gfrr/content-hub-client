@@ -2,20 +2,19 @@
   width: 250px;
   height: 180px;
 }
-
-
 .reddit-content {
+  padding: 5px;
+  background-color: lightblue;
   display: flex;
   flex-flow: column;
 }
-
-
 .foot  {
+  background-color: lightgreen;
   display: flex;
   justify-content: space-around;
 }
-
 #right {
+  background-color: lightpink;
   display: flex;
   flex-flow: column;
 }

@@ -15,7 +15,7 @@ export class TwitterPipe implements PipeTransform {
         word = word.replace(/(#)\w+/g, `<a href="https://twitter.com/hashtag/${word.substring(1)}?src=hash">${word}</a> `);
         return word;
       }).join(" ");
-    result = `<p lang="en" dir="ltr">` + result + `</p>`;
+    result = `<p lang="en" dir="ltr" class="tweet-text">` + result + `</p>`;
 
     return result;
 

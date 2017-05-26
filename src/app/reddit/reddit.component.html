@@ -4,27 +4,20 @@
   <h5><a href="https://reddit.com/{{reddit.data.permalink}}">{{reddit.data.title}}
   </a></h5>
   <div class="foot">
-    <div>
-
-      <a href="{{reddit.data.url}}"><img class="pic" src="{{reddit.data.preview.images[0].source.url}}" alt="/assets/images/reddit.png"/></a>
+    <div class="reddit-pic-wrapper">
+      <a href="{{reddit.data.url}}">
+        <img class="pic" src="{{reddit.data.preview.images[0].source.url}}" alt="/assets/images/reddit.png"/>
+      </a>
     </div>
     <div id="right">
-
-        <div>
-          <a href="https://reddit.com/{{reddit.data.subreddit_name_prefixed}}">{{reddit.data.subreddit_name_prefixed}}</a>
-        </div>
-        <div>
-          <p>
-            submitted by <a href="https://reddit.com/u/{{reddit.data.author}}">{{reddit.data.author}}</a> on {{reddit.data.created | date}}
-          </p>
-        </div>
-
-    </div>
-
-
-  </div>
-  <!-- <div *ngIf="reddit.data.post_hint == 'image'"> -->
-
-  <!-- </div> -->
-
-</div>
+      <div class="subreddit-name">
+        <a href="https://reddit.com/{{reddit.data.subreddit_name_prefixed}}">{{reddit.data.subreddit_name_prefixed}}</a>
+      </div>
+      <div class="reddit-author">
+        <p>
+          submitted by <a href="https://reddit.com/u/{{reddit.data.author}}">{{reddit.data.author}}</a> on {{reddit.data.created | date}}
+        </p>
+      </div>
+    </div><!-- id right -->
+  </div><!-- foot -->
+</div><!-- reddit-content -->
