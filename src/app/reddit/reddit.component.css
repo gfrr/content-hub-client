@@ -1,21 +1,26 @@
-.pic {
-  width: 250px;
-  height: 180px;
+.reddit-pic-wrapper {
+  flex: 1;
 }
-
-
-.reddit-content {
+.reddit-info-wrapper {
   display: flex;
-  flex-flow: column;
+  align-items: center;
 }
-
-
-.foot  {
-  display: flex;
-  justify-content: space-around;
+.reddit-title{
+  margin-bottom: 3px;
 }
-
-#right {
-  display: flex;
-  flex-flow: column;
+.reddit-text{
+  flex: 2;
+  padding-left: 8px;
+}
+p {
+  font-size: 15px;
+  margin-bottom: 1px;
+}
+h4{
+  margin-bottom: 3px;
+  font-size: 17px;
+  font-weight: 500;
+}
+a{
+  color: #3a7baf;
 }

@@ -1,28 +1,29 @@
 
 
-<div class="reddit-content">
-  <h5><a href="https://reddit.com/{{reddit.data.permalink}}">{{reddit.data.title}}
-  </a></h5>
-  <div class="foot">
-    <div>
-
-      <a href="{{reddit.data.url}}"><img class="pic" src="{{reddit.data.preview.images[0].source.url}}" alt="/assets/images/reddit.png"/></a>
-    </div>
-    <div id="right">
-
-        <div>
-          <a href="https://reddit.com/{{reddit.data.subreddit_name_prefixed}}">{{reddit.data.subreddit_name_prefixed}}</a>
-        </div>
-        <div>
-          <p>
-            submitted by <a href="https://reddit.com/u/{{reddit.data.author}}">{{reddit.data.author}}</a> on {{reddit.data.created | date}}
-          </p>
-        </div>
-
-    </div>
 
 
+<div class="reddit-content-wrapper">
+  <div class="reddit-title">
+    <h4 class="title"><a target="_blank" href="https://reddit.com/{{reddit.data.permalink}}">{{reddit.data.title}}
+    </a></h4>
   </div>
 
+  <div class="reddit-info-wrapper">
+    <div class="reddit-pic-wrapper">
+      <a href="{{reddit.data.url}}">
+        <img class="pic" src="{{reddit.data.preview.images[0].source.url}}" alt="/assets/images/reddit.png"/>
+      </a>
+    </div><!-- reddit-pic-wrapper -->
+    <div class="reddit-text">
 
-</div>
+        <p class="reddit-author"><!-- reddit-author -->
+          submitted by <a target="_blank" href="https://reddit.com/u/{{reddit.data.author}}">{{reddit.data.author}} </a>
+        to <a target="_blank" href="https://reddit.com/{{reddit.data.subreddit_name_prefixed}}">{{reddit.data.subreddit_name_prefixed}}</a>
+        on {{reddit.data.created * 1000 | date}}</p>
+        <p>Score: <strong>{{reddit.data.score}}</strong></p>
+        <!-- subreddit-name -->
+
+    </div><!-- reddit-text -->
+  </div><!-- reddit-info-wrapper -->
+</div><!-- reddi-content-wrapper -->
+

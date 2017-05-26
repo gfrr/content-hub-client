@@ -6,23 +6,20 @@
           <h5>Your search:</h5>
           <ul>
             <li>tag #1</li>
-            <li>tag #2</li>
-            <li>tag #3</li>
-            <li>tag #4</li>
           </ul>
         </div>
         <!-- left side-->
       </div>
       <!-- side-left col-xs-12 col-sm-2 -->
 
-      <div class="search-video-cont col-xs-12 col-sm-6 ">
+      <div class="search-video-cont col-xs-12 col-sm-8 ">
         <div class="search">
-          <h2>search for any hashtag!</h2>
+          <h3>search for tags</h3>
           <input id="search_tags" placeholder="search tags" type="text" [(ngModel)]="searchTags">
           <button class="search-btn" id="search-button" (click)="search()">Search</button>
-          <button class="search-btn" (click)="next()">Next!</button>
-        </div>
-        <!-- search -->
+          <button class="search-btn" (click)="next()">More!</button>
+        </div><!-- search -->
+
 
         <!-- youtube start -->
         <div *ngIf=!hidden>
@@ -31,6 +28,7 @@
               <p>
                 loading
               </p>
+
             </div>
             <div *ngIf="isLoadingYt">
               <app-youtube [video]=videoId (onFavorite)="next1($event)"></app-youtube>
@@ -52,7 +50,7 @@
           </div>
           <!-- twitter end  -->
           <!-- reddit start -->
-          <div class="reddit">
+          <div class="reddit-wrapper">
             <div *ngIf="!isLoadingReddit">
               <p>
                 loading
@@ -77,10 +75,6 @@
         </div>
       </div>
       <!-- col-xs-12 col-md-10 -->
-
-
-
-
       <div class="side-right col-xs-6 col-sm-2 ">
       </div>
       <!-- col-xs-12 col-md-10 -->
@@ -95,11 +89,11 @@
                 <li>Nikes</li>
                 <li>Elephants</li>
               </ul>
-            </div>
-            <!-- popular-tag -->
-          </div>
-          <!-- side-right col-xs-12 col-sm-2 -->
-          <div class="side-right col-xs-6 col-sm-6 ">
+
+            </div><!-- popular-tag -->
+          </div><!-- side-right col-xs-12 col-sm-2 -->
+          <div class="side-right col-xs-6 col-sm-3 ">
+
             <div class="popular-tags">
               <h5>Most popular tags:</h5>
               <ul>
@@ -108,17 +102,11 @@
                 <li>Dogs</li>
                 <li>Rubiks cube</li>
               </ul>
-            </div>
-            <!-- popular-tag -->
-          </div>
-          <!-- side-right col-xs-12 col-sm-2 -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- col-xs-12 col-sm-2 -->
-    </div>
-    <!-- row -->
-  </div>
-  <!-- container -->
-</div>
-<!-- content-wrapper -->
+            </div><!-- popular-tag -->
+          </div><!-- side-right col-xs-12 col-sm-2 -->
+        </div><!-- row -->
+      </div><!-- col-xs-12 col-sm-2 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</div><!-- content-wrapper -->
+
