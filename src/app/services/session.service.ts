@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Router, CanActivate } from '@angular/router';
@@ -14,6 +14,7 @@ export class SessionService implements CanActivate {
   public token: string;
   public isAuth: boolean;
   public user: string;
+  public id: string;
 
 	BASE_URL: string = 'http://localhost:3000';
 
@@ -33,7 +34,9 @@ export class SessionService implements CanActivate {
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem('token')) {
       this.token  = localStorage.getItem('token');
+      console.log(jwtDecode(this.token));
       this.user   = jwtDecode(this.token).user;
+      this.id = jwtDecode(this.token).id;
       this.isAuth = true;
       return true;
     }
@@ -56,6 +59,8 @@ export class SessionService implements CanActivate {
           // set token property
           this.token = token;
           this.user = jwtDecode(token).user;
+          console.log(jwtDecode(this.token));
+          this.id = jwtDecode(this.token).id;
           // store username and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('token', token );
           this.isAuth = true;
@@ -76,6 +81,8 @@ export class SessionService implements CanActivate {
               // set token property
               this.token = token;
               this.user = jwtDecode(token).user;
+              console.log(jwtDecode(this.token));
+              this.id = jwtDecode(this.token).id;
               this.isAuth = true;
               // store username and jwt token in local storage to keep user logged in between page refreshes
               localStorage.setItem('token', token );
@@ -85,6 +92,24 @@ export class SessionService implements CanActivate {
             } else return false;   // return false to indicate failed login
         });
   }
+
+  save(data){
+    let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+
+    let options = new RequestOptions({ headers: headers });
+    console.log(options);
+    return this.http.post(`${this.BASE_URL}/users/${this.id}/save`, data, options)
+      .map((res) => res.json());
+  }
+
+  delete() {
+    let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+    let options = new RequestOptions({ headers: headers});
+
+    return this.http.delete(`${this.BASE_URL}/users/${this.id}`, options)
+      .map((res) => res.json());
+  }
+
 
   logout() {
       this.token = null;
@@ -111,6 +136,13 @@ export class SessionService implements CanActivate {
 
   searchReddit(query){
     return this.http.post(`${this.BASE_URL}/search/reddit`, query)
+      .map((response: Response)=>{
+        return response.json();
+      });
+  }
+
+  searchTumblr(query){
+    return this.http.post(`${this.BASE_URL}/search/tumblr`, query)
       .map((response: Response)=>{
         return response.json();
       });

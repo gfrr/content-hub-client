@@ -11,8 +11,11 @@ export class ContentComponent implements OnInit {
   public searchTags: string = "";
   public result: any;
   public tweets: any;
+  public tumblr: any;
   public redditPosts: any;
+  public tumblrPosts: Object[];
   index: number = 0;
+  indexVideo: number = 0;
   public videoId: string = "";
   public tweet: string = "";
   public reddit: any;
@@ -20,6 +23,7 @@ export class ContentComponent implements OnInit {
   isLoadingTweet: boolean = false;
   isLoadingYt: boolean = false;
   isLoadingReddit: boolean = false;
+  isLoadingTumblr: boolean = false;
   constructor(
     private session: SessionService,
     // private ng2TweetService: Ng2TweetService
@@ -31,6 +35,7 @@ export class ContentComponent implements OnInit {
     this.isLoadingTweet = false;
     this.isLoadingYt = false;
     this.isLoadingReddit = false;
+    this.isLoadingTumblr = false;
     this.index = 0;
     this.session.searchYoutube({search: this.searchTags}).subscribe(result => {
       this.result = result.items;
@@ -49,15 +54,33 @@ export class ContentComponent implements OnInit {
       this.reddit = this.redditPosts[this.index];
       this.isLoadingReddit = true;
     });
-    this.index++;
+
+    this.session.searchTumblr({hashtag: this.searchTags}).subscribe(result=>{
+      this.tumblrPosts = result.response;
+      this.tumblr = this.tumblrPosts[this.index];
+      console.log(this.tumblr);
+      this.isLoadingTumblr = true;
+    });
+
     this.hidden = false;
   }
 
   next(){
-    if(this.index == this.tweets.length - 1) this.index = 0;
+
+    this.index++;
+    if(this.index >= this.tweets.length - 1) this.index = 0;
     this.videoId = this.result[this.index].id.videoId;
     this.tweet = this.tweets[this.index];
     this.reddit = this.redditPosts[this.index];
-    this.index++;
+    this.tumblr = this.tumblrPosts[this.index];
+
+  }
+  next1(type){
+    if(type == "video") {
+      this.indexVideo++;
+      if(this.indexVideo >= this.result.length - 1) this.indexVideo = 0;
+      this.videoId = this.result[this.indexVideo].id.videoId;
+
+    }
   }
 }
