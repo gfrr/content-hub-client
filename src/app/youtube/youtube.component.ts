@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SessionService } from '../services/session.service';
 @Component({
   selector: 'app-youtube',
@@ -7,12 +7,18 @@ import { SessionService } from '../services/session.service';
 })
 export class YoutubeComponent implements OnInit {
   @Input() video: any;
+  @Output() onFavorite = new EventEmitter<string>();
   constructor(
     private session: SessionService,
   ) { }
 
   ngOnInit() {
   }
+
+  onQuote () {
+    this.onFavorite.emit("video");
+  }
+
   save(data){
     this.session.save({
       source: "YOUTUBE",
