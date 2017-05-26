@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-tumblr',
@@ -7,9 +8,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TumblrComponent implements OnInit {
   @Input() tumblr: any;
-  constructor() { }
+  @Output() onFavorite = new EventEmitter<string>();
+  constructor(private session: SessionService,) { }
 
   ngOnInit() {
   }
+  onQuote () {
+    this.onFavorite.emit("tumblr");
+  }
 
+  save(data){
+    this.session.save({
+      source: "TUMBLR",
+      data: {
+        tumblr: data
+      }
+    }
+    ).subscribe(()=>{
+      console.log("item saved");
+      this.onQuote();
+    });
+  }
 }

@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
     this.favorites = this.session.getFavorites();
     this.favorites.forEach((favorite)=>{
       this.session.getFavorite(favorite).subscribe(result=> {
-        console.log(result);
         this.favoritesData.push(result);
       });
 
