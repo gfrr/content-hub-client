@@ -37,12 +37,14 @@
   margin-right: 5px;
 }
 .date{/*date*/
+  color: #28586f;
   line-height: 1.2;
   font-style: italic;
   margin-bottom: 3px;
   margin-left: 5px;
 }
 .twitter-tweet{
+  color: #28586f;
   font-size: 16px;
   font-family: helvetica, sans-serif;
   margin-bottom: -18px;
@@ -50,4 +52,5 @@
 p{
   margin:0px;
 }
+
 /*right side - tweet content END*/
