@@ -26,7 +26,6 @@ export class ContentComponent implements OnInit {
   isLoadingTumblr: boolean = false;
   constructor(
     private session: SessionService,
-    // private ng2TweetService: Ng2TweetService
   ) { }
 
   ngOnInit() {
