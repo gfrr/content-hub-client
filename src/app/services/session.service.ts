@@ -99,7 +99,16 @@ export class SessionService implements CanActivate {
     let options = new RequestOptions({ headers: headers });
     console.log(options);
     return this.http.post(`${this.BASE_URL}/users/${this.id}/save`, data, options)
-      .map((res) => res.json());
+      .map((res: Response) => {
+          let user = res.json() && res.json().user;
+          localStorage.setItem('user', JSON.stringify(user));
+          return true;
+      });
+  }
+
+  getFavorites(){
+    console.log(JSON.parse(localStorage.user));
+    return JSON.parse(localStorage.user).favorites;
   }
 
   delete() {
@@ -118,6 +127,13 @@ export class SessionService implements CanActivate {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       this.router.navigate(['/login']);
+  }
+
+  getFavorite(id){
+    return this.http.get(`${this.BASE_URL}/search/${id}`)
+      .map((res: Response)=>{
+        return res.json();
+      })
   }
 
   //search queries
@@ -147,4 +163,6 @@ export class SessionService implements CanActivate {
         return response.json();
       });
   }
+
+
 }

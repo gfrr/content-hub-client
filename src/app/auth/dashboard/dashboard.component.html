@@ -7,3 +7,12 @@
 <div *ngIf="displayEdit">
   <!-- <app-edit [edit-info]="user"></app-edit> -->
 </div>
+
+<div *ngIf="favorites.length>0">
+  <div *ngFor="let favorite of favoritesData">
+    <div *ngIf="favorite.content.source == 'YOUTUBE'">
+      <app-youtube [video]=favorite.content.data.video (onFavorite)="next1($event)"></app-youtube>
+    </div>
+
+  </div>
+</div>
