@@ -15,6 +15,7 @@ export class ContentComponent implements OnInit {
   public redditPosts: any;
   public tumblrPosts: Object[];
   index: number = 0;
+  indexVideo: number = 0;
   public videoId: string = "";
   public tweet: string = "";
   public reddit: any;
@@ -61,15 +62,25 @@ export class ContentComponent implements OnInit {
       this.isLoadingTumblr = true;
     });
 
-    this.index++;
     this.hidden = false;
   }
 
   next(){
-    if(this.index == this.tweets.length - 1) this.index = 0;
+
+    this.index++;
+    if(this.index >= this.tweets.length - 1) this.index = 0;
     this.videoId = this.result[this.index].id.videoId;
     this.tweet = this.tweets[this.index];
     this.reddit = this.redditPosts[this.index];
-    this.index++;
+    this.tumblr = this.tumblrPosts[this.index];
+
+  }
+  next1(type){
+    if(type == "video") {
+      this.indexVideo++;
+      if(this.indexVideo >= this.result.length - 1) this.indexVideo = 0;
+      this.videoId = this.result[this.indexVideo].id.videoId;
+
+    }
   }
 }

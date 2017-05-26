@@ -12,9 +12,9 @@
 
       <ul class="nav navbar-nav navbar-right">
 
-        <li *ngIf="!authenticated"><a [routerLink]="['/signup']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li *ngIf="!authenticated"><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li *ngIf="authenticated"><a class="button" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li *ngIf="!this.session.isAuth"><a [routerLink]="['/signup']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li *ngIf="!this.session.isAuth"><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li *ngIf="this.session.isAuth"><a class="button" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
       </ul>
     </div>

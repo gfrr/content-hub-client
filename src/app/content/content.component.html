@@ -33,7 +33,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingYt">
-              <app-youtube [video]=videoId></app-youtube>
+              <app-youtube [video]=videoId (onFavorite)="next1($event)"></app-youtube>
             </div>
             <!-- ngif loading -->
           </div>

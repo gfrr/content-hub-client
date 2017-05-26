@@ -93,11 +93,20 @@ export class SessionService implements CanActivate {
         });
   }
 
-  delete(id) {
+  save(data){
     let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+
     let options = new RequestOptions({ headers: headers });
     console.log(options);
-    return this.http.delete(`${this.BASE_URL}/users/${id}`, options)
+    return this.http.post(`${this.BASE_URL}/users/${this.id}/save`, data, options)
+      .map((res) => res.json());
+  }
+
+  delete() {
+    let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+    let options = new RequestOptions({ headers: headers});
+
+    return this.http.delete(`${this.BASE_URL}/users/${this.id}`, options)
       .map((res) => res.json());
   }
 

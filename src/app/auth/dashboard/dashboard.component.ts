@@ -23,8 +23,7 @@ export class DashboardComponent implements OnInit {
     this.displayEdit = true;
   }
   delete(){
-    console.log(typeof(this.user.id));
-    this.session.delete(this.user.id).subscribe(() => {
+    this.session.delete().subscribe(() => {
         this.session.logout();
       });
   }

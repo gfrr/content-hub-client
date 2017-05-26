@@ -7,15 +7,13 @@ import { SessionService } from '../services/session.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  authenticated: boolean = false;
+
   constructor(private session: SessionService) { }
 
   ngOnInit() {
-    if(this.session.isAuthenticated()) this.authenticated = true;
-    console.log(this.authenticated);
+
   }
   logout(){
     this.session.logout();
-    this.authenticated = false;
   }
 }
