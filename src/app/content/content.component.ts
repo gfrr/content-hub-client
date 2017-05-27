@@ -16,6 +16,9 @@ export class ContentComponent implements OnInit {
   public tumblrPosts: Object[];
   index: number = 0;
   indexVideo: number = 0;
+  indexTwitter: number = 0;
+  indexTumblr: number = 0;
+  indexReddit: number = 0;
   public videoId: string = "";
   public tweet: string = "";
   public reddit: any;
@@ -79,7 +82,21 @@ export class ContentComponent implements OnInit {
       this.indexVideo++;
       if(this.indexVideo >= this.result.length - 1) this.indexVideo = 0;
       this.videoId = this.result[this.indexVideo].id.videoId;
-
+    }
+    if(type== "tweet"){
+      this.indexTwitter++;
+      if(this.indexTwitter >= this.tweets.length -1) this.indexTwitter = 0;
+      this.tweet = this.tweets[this.indexTwitter];
+    }
+    if(type == "reddit") {
+      this.indexReddit++;
+      if(this.indexReddit >= this.redditPosts.length - 1) this.indexReddit = 0;
+      this.reddit = this.redditPosts[this.indexReddit];
+    }
+    if(type  == "tumblr"){
+      this.indexTumblr++;
+      if(this.indexTumblr >= this.tumblrPosts.length - 1) this.indexTumblr = 0;
+      this.tumblr = this.tumblrPosts[this.indexTumblr];
     }
   }
 }
