@@ -1,5 +1,4 @@
 iframe{
-
 /*normal size:*/
   width:504px;
   height:283px;
@@ -9,6 +8,13 @@ iframe{
   /*max-width:85vw;*/
   /*height:auto;
   width:504px;*/
+}
 
-
+.save-button{
+  border:0px;
+  background-color: #d27983;
+}
+.wat-button{
+  border:0px;
+  background-color: #d27983;
 }
