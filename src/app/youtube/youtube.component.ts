@@ -28,6 +28,7 @@ export class YoutubeComponent implements OnInit {
     }
     ).subscribe(()=>{
       console.log("item saved");
+      this.onQuote();
     });
   }
 }

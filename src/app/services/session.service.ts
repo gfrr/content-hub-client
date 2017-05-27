@@ -99,7 +99,16 @@ export class SessionService implements CanActivate {
     let options = new RequestOptions({ headers: headers });
     console.log(options);
     return this.http.post(`${this.BASE_URL}/users/${this.id}/save`, data, options)
-      .map((res) => res.json());
+      .map((res: Response) => {
+          let user = res.json() && res.json().user;
+          localStorage.setItem('user', JSON.stringify(user));
+          return true;
+      });
+  }
+
+  getFavorites(){
+    console.log(JSON.parse(localStorage.user));
+    return JSON.parse(localStorage.user).favorites;
   }
 
   delete() {
@@ -120,7 +129,23 @@ export class SessionService implements CanActivate {
       this.router.navigate(['/login']);
   }
 
-  //search queries
+  getFavorite(id){
+    return this.http.get(`${this.BASE_URL}/search/${id}`)
+      .map((res: Response)=>{
+        return res.json();
+      })
+  }
+
+  //search queries, this is gonna go in another service as soon as i'm finished
+
+  getTags(){
+    return this.http.get(`${this.BASE_URL}/search/trends`)
+      .map((res: Response)=>{
+        return res.json();
+      })
+  }
+
+
   searchYoutube(query){
     return this.http.post(`${this.BASE_URL}/search/youtube`, query)
         .map((response: Response)=>{
@@ -147,4 +172,6 @@ export class SessionService implements CanActivate {
         return response.json();
       });
   }
+
+
 }

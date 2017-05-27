@@ -7,3 +7,20 @@
 <div *ngIf="displayEdit">
   <!-- <app-edit [edit-info]="user"></app-edit> -->
 </div>
+
+<div *ngIf="favorites.length>0">
+  <div *ngFor="let favorite of favoritesData">
+    <div *ngIf="favorite.content.source == 'YOUTUBE'">
+      <app-youtube [video]=favorite.content.data.video ></app-youtube>
+    </div>
+    <div *ngIf="favorite.content.source == 'TWITTER'">
+      <app-tweet [tweet]=favorite.content.data.tweet ></app-tweet>
+    </div>
+    <div *ngIf="favorite.content.source == 'REDDIT'">
+        <app-reddit [reddit]=favorite.content.data.reddit ></app-reddit>
+    </div>
+    <div *ngIf="favorite.content.source == 'TUMBLR'">
+        <app-tumblr [tumblr]=favorite.content.data.tumblr ></app-tumblr>
+    </div>
+  </div>
+</div>
