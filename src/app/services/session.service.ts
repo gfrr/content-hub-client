@@ -145,6 +145,12 @@ export class SessionService implements CanActivate {
       })
   }
 
+ getPopular(){
+   return this.http.get(`${this.BASE_URL}/search/popular`)
+    .map((res: Response)=>{
+      return res.json();
+    })
+ }
 
   searchYoutube(query){
     return this.http.post(`${this.BASE_URL}/search/youtube`, query)
