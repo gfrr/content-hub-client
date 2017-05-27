@@ -3,23 +3,29 @@
   width:100vw;
   z-index:2;
   margin:0px;
-  background-color: #28586f;
+  background-color: #d27983;
 }
 ul li span{
-  
+
   color: white;
 }
 ul li a{
   font-family: 'Patua One', cursive;
     color: white;
 }
-
+#logout-button{
+  border:0px;
+  background-color: #d27983;
+}
 
 .navbar-brand{
   font-family: 'Patua One', cursive;
   color:white;
 }
 .navbar-header{
-  background-color: #28586f;
+  background-color: #d27983;
+}
+.icon-bar{
+  color: white;
 }
 /*navbar end*/
