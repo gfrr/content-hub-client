@@ -10,16 +10,16 @@
 <hr>
 <div *ngIf="favorites.length>0">
   <div *ngFor="let favorite of favoritesData">
-    <div *ngIf="favorite.content.source == 'YOUTUBE'">
+    <div class="yt-wrapper" *ngIf="favorite.content.source == 'YOUTUBE'">
       <app-youtube [video]=favorite.content.data.video ></app-youtube>
     </div>
-    <div *ngIf="favorite.content.source == 'TWITTER'">
+    <div class="tweet-wrapper" *ngIf="favorite.content.source == 'TWITTER'">
       <app-tweet [tweet]=favorite.content.data.tweet ></app-tweet>
     </div>
-    <div *ngIf="favorite.content.source == 'REDDIT'">
+    <div class="reddit-wrapper" *ngIf="favorite.content.source == 'REDDIT'">
         <app-reddit [reddit]=favorite.content.data.reddit ></app-reddit>
     </div>
-    <div *ngIf="favorite.content.source == 'TUMBLR'">
+    <div class="tumblr-wrapper" *ngIf="favorite.content.source == 'TUMBLR'">
         <app-tumblr [tumblr]=favorite.content.data.tumblr ></app-tumblr>
     </div>
   </div>

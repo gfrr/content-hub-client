@@ -1,0 +1,36 @@
+/*youtube START*/
+.yt-wrapper{
+  width:100%;
+  height:auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  margin-top:10px;
+}
+/*youtube END*/
+
+/*TWEET START*/
+.tweet-wrapper{
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+}
+/*TWEET END*/
+
+/*REDDIT START*/
+.reddit-wrapper{
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+}
+/*REDDIT END*/
+
+/*TUMBLR START*/
+.tumblr-wrapper{
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+  
+}
+/*TUMBLR END*/

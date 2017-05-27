@@ -77,24 +77,15 @@
         <div class="col-xs-12 col-sm-3">
             <div class="popular-tags">
               <h5>Trending tags:</h5>
-              <div *ngIf="!isLoadingTags">
-                <p>
-                  loading
-                </p>
-              </div>
-              <div  *ngIf="isLoadingTags">
-                 <div class="trending-tags" *ngFor="let tag of tags; let i=index">
-                      <a *ngIf="i<7" (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
-                </div>
+              <div class="trending-tags" *ngFor="let tag of tags; let i=index">
+                    <a *ngIf="i<7" (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
               </div>
             </div><!-- popular-tag -->
             <div class="popular-tags">
               <h5>Most popular tags:</h5>
-              <ul>
-                <li *ngFor="let pop of popular">
-                  <a (click)="searchThis(pop.substring(1))">{{pop}}</a>
-                </li>
-              </ul>
+                <div class="trending-tags" *ngFor="let pop of popular; let i=index">
+                  <a *ngIf="i<7" (click)="searchThis(pop.substring(1))">{{pop}}</a>
+                </div>
             </div><!-- popular-tag -->
         </div><!-- col-xs-12 col-sm-2 -->
     </div><!-- row -->
