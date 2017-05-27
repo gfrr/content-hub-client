@@ -19,8 +19,6 @@
           <button class="search-btn" id="search-button" (click)="search()">Search</button>
           <button class="search-btn" (click)="next()">More!</button>
         </div><!-- search -->
-
-
         <!-- youtube start -->
         <div *ngIf=!hidden>
           <div class="yt-wrapper">
@@ -28,7 +26,6 @@
               <p>
                 loading
               </p>
-
             </div>
             <div *ngIf="isLoadingYt">
               <app-youtube [video]=videoId (onFavorite)="next1($event)"></app-youtube>
@@ -69,42 +66,27 @@
               </p>
             </div>
             <div *ngIf="isLoadingTumblr">
-
               <app-tumblr [tumblr]=tumblr></app-tumblr>
             </div><!-- isloadingTumblr -->
           </div><!-- tumblr-wrapper -->
-
         </div>
       </div>
       <!-- col-xs-12 col-md-10 -->
-      
-      <div class="col-xs-12 col-sm-3 ">
-        <div class="row">
-          <div class="side-right col-xs-6 col-sm-6 ">
+      <!-- RIGHT SIDEBAR -->
+        <div class="col-xs-12 col-sm-3">
             <div class="popular-tags">
-
               <h5>Trending tags:</h5>
               <div *ngIf="!isLoadingTags">
                 <p>
                   loading
                 </p>
               </div>
-              <div *ngIf="isLoadingTags">
-                <ul>
-                  <li *ngFor="let tag of tags">
-
-                      <a (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
-
-                  </li>
-
-                </ul>
+              <div  *ngIf="isLoadingTags">
+                 <div class="trending-tags" *ngFor="let tag of tags; let i=index">
+                      <a *ngIf="i<7" (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
+                </div>
               </div>
-
-
             </div><!-- popular-tag -->
-          </div><!-- side-right col-xs-12 col-sm-2 -->
-          <div class="side-right col-xs-6 col-sm-3 ">
-
             <div class="popular-tags">
               <h5>Most popular tags:</h5>
               <ul>
@@ -114,9 +96,7 @@
                 <li>Rubiks cube</li>
               </ul>
             </div><!-- popular-tag -->
-          </div><!-- side-right col-xs-12 col-sm-2 -->
-        </div><!-- row -->
-      </div><!-- col-xs-12 col-sm-2 -->
+        </div><!-- col-xs-12 col-sm-2 -->
     </div><!-- row -->
   </div><!-- container -->
 </div><!-- content-wrapper -->
