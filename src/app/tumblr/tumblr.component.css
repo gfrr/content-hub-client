@@ -1,0 +1,11 @@
+.tumblr-wrapper{
+  display: flex;
+  align-items: center;
+}
+.content-image{
+  flex:1;
+  margin-right: 5px;
+}
+.content-wrapper{
+  flex:3;
+}
