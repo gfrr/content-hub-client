@@ -72,6 +72,7 @@
         </div>
       </div>
       <!-- col-xs-12 col-md-10 -->
+
       <!-- RIGHT SIDEBAR -->
         <div class="col-xs-12 col-sm-3">
             <div class="popular-tags">
@@ -90,10 +91,9 @@
             <div class="popular-tags">
               <h5>Most popular tags:</h5>
               <ul>
-                <li>Trump</li>
-                <li>Mechanical keyboards</li>
-                <li>Dogs</li>
-                <li>Rubiks cube</li>
+                <li *ngFor="let pop of popular">
+                  <a (click)="searchThis(pop.substring(1))">{{pop}}</a>
+                </li>
               </ul>
             </div><!-- popular-tag -->
         </div><!-- col-xs-12 col-sm-2 -->
