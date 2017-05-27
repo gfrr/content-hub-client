@@ -45,7 +45,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingTweet">
-              <app-tweet [tweet]=tweet></app-tweet>
+              <app-tweet [tweet]=tweet (onFavorite)="next1($event)"></app-tweet>
             </div>
           </div>
           <!-- twitter end  -->
@@ -57,7 +57,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingReddit">
-              <app-reddit [reddit]=reddit></app-reddit>
+              <app-reddit [reddit]=reddit (onFavorite)="next1($event)"></app-reddit>
             </div>
           </div>
           <!-- REDDIT END -->
@@ -69,7 +69,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingTumblr">
-              <app-tumblr [tumblr]=tumblr></app-tumblr>
+              <app-tumblr [tumblr]=tumblr ></app-tumblr>
             </div>
           </div>
         </div>
@@ -82,13 +82,24 @@
         <div class="row">
           <div class="side-right col-xs-6 col-sm-6 ">
             <div class="popular-tags">
+
               <h5>Trending tags:</h5>
-              <ul>
-                <li>Weapons</li>
-                <li>Mechanical keyboards</li>
-                <li>Nikes</li>
-                <li>Elephants</li>
-              </ul>
+              <div *ngIf="!isLoadingTags">
+                <p>
+                  loading
+                </p>
+              </div>
+              <div *ngIf="isLoadingTags">
+                <ul>
+                  <li *ngFor="let tag of tags">
+
+                      <a (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
+
+                  </li>
+
+                </ul>
+              </div>
+
 
             </div><!-- popular-tag -->
           </div><!-- side-right col-xs-12 col-sm-2 -->
