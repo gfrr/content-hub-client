@@ -16,6 +16,7 @@ export class ContentComponent implements OnInit {
   public redditPosts: any;
   public tumblrPosts: Object[];
   public tags: any;
+  public popular: any;
   index: number = 0;
   indexVideo: number = 0;
   indexTwitter: number = 0;
@@ -48,6 +49,10 @@ export class ContentComponent implements OnInit {
         return elem.name[0] == "#";
       });
     });
+    this.session.getPopular().subscribe(result=>{
+      this.popular = result.reverse();
+      console.log(this.popular);
+    })
   }
   search(){
     this.isLoadingTweet = false;
