@@ -9,11 +9,13 @@ import { SessionService } from '../services/session.service';
 })
 export class ContentComponent implements OnInit {
   public searchTags: string = "";
+  public trends: any;
   public result: any;
   public tweets: any;
   public tumblr: any;
   public redditPosts: any;
   public tumblrPosts: Object[];
+  public tags: any;
   index: number = 0;
   indexVideo: number = 0;
   indexTwitter: number = 0;
@@ -23,6 +25,7 @@ export class ContentComponent implements OnInit {
   public tweet: string = "";
   public reddit: any;
   hidden: boolean = true;
+  isLoadingTags: boolean = false;
   isLoadingTweet: boolean = false;
   isLoadingYt: boolean = false;
   isLoadingReddit: boolean = false;
@@ -31,7 +34,20 @@ export class ContentComponent implements OnInit {
     private session: SessionService,
   ) { }
 
+  searchThis(name){
+    console.log(name);
+    this.searchTags = name;
+    this.search();
+  }
+
   ngOnInit() {
+    this.session.getTags().subscribe(result =>{
+      // console.log(result);
+      this.isLoadingTags = true;
+      this.tags = result.filter((elem)=>{
+        return elem.name[0] == "#";
+      });
+    });
   }
   search(){
     this.isLoadingTweet = false;

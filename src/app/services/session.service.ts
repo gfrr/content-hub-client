@@ -136,7 +136,16 @@ export class SessionService implements CanActivate {
       })
   }
 
-  //search queries
+  //search queries, this is gonna go in another service as soon as i'm finished
+
+  getTags(){
+    return this.http.get(`${this.BASE_URL}/search/trends`)
+      .map((res: Response)=>{
+        return res.json();
+      })
+  }
+
+
   searchYoutube(query){
     return this.http.post(`${this.BASE_URL}/search/youtube`, query)
         .map((response: Response)=>{
