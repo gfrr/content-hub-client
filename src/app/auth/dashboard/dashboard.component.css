@@ -3,9 +3,11 @@
   background-color: #d27983;
 }
 .delete-button{
+  margin-left: 3px;
   border:0px;
   background-color: #d27983;
 }
+
 .remove-yt{
   color: #d27983;
   position:relative;

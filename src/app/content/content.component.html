@@ -4,11 +4,9 @@
       <div class="side-left col-xs-12 col-sm-3 ">
         <div class="left side">
           <h5>Your searches:</h5>
-          <ul>
-            <li *ngFor="let search of searches">
-              <a (click)="searchThis(search)">{{search}}</a><span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
-            </li>
-          </ul>
+            <div class="search-tags" *ngFor="let search of searches; let i=index">
+              <a *ngIf="i<7" (click)="searchThis(search)">#{{search}} </a> <span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
+          </div>
         </div>
         <!-- left side-->
       </div>
