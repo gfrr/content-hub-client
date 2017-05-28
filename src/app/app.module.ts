@@ -23,7 +23,7 @@ import { RedditComponent } from './reddit/reddit.component';
 import { TumblrComponent } from './tumblr/tumblr.component';
 import { EditComponent } from './auth/dashboard/edit/edit.component';
 import { DeleteComponent } from './auth/dashboard/delete/delete.component';
-
+import 'hammerjs';
 
 
 

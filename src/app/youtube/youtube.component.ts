@@ -17,6 +17,18 @@ export class YoutubeComponent implements OnInit {
     console.log(this.showButtons);
   }
 
+  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+  swipe(action){
+    if(action === this.SWIPE_ACTION.RIGHT){
+      console.log("ayy swiped right");
+      this.save(this.video);
+    }
+    if (action === this.SWIPE_ACTION.LEFT) {
+            console.log("ayy swiped left");
+            this.onQuote();
+        }
+  };
+
   onQuote () {
     this.onFavorite.emit("video");
   }
