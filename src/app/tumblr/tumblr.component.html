@@ -20,6 +20,7 @@
     </div>
   </div><!-- content-wrapper -->
 </div><!-- tumblr-wrapper -->
-
-<button class="save-button" (click)="save(tumblr)">save</button>
-<button class="save-button" (click)="onQuote()">wat</button>
+<div *ngIf="showButtons">
+  <button class="save-button" (click)="save(tumblr)">save</button>
+  <button class="wat-button" (click)="onQuote()">wat</button>
+</div>

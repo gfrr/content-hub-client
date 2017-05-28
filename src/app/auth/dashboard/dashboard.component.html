@@ -12,25 +12,25 @@
       <div *ngFor="let favorite of favoritesData">
         <div class="youtube-dash">
           <div class="yt-wrapper" *ngIf="favorite.content.source == 'YOUTUBE'">
-            <app-youtube [video]=favorite.content.data.video ></app-youtube>
+            <app-youtube [video]=favorite.content.data.video [showButtons]=false></app-youtube>
               <a class="remove-yt"(click)="remove()"><span class="glyphicon glyphicon-remove"></span></a>
           </div>
         </div><!-- youtube-dash -->
         <div class="twitter-dash">
           <div class="tweet-wrapper" *ngIf="favorite.content.source == 'TWITTER'">
-            <app-tweet [tweet]=favorite.content.data.tweet ></app-tweet>
+            <app-tweet [tweet]=favorite.content.data.tweet [showButtons]=false></app-tweet>
             <a class="remove-tw"(click)="remove()"><span class="glyphicon glyphicon-remove"></span></a>
           </div>
         </div><!-- twitter-dash -->
         <div class="reddit-dash">
           <div class="reddit-wrapper" *ngIf="favorite.content.source == 'REDDIT'">
-              <app-reddit [reddit]=favorite.content.data.reddit ></app-reddit>
+              <app-reddit [reddit]=favorite.content.data.reddit [showButtons]=false ></app-reddit>
               <a class="remove-re"(click)="remove()"><span class="glyphicon glyphicon-remove"></span></a>
           </div>
         </div><!-- reddit-dash -->
         <div class="tumblr-dash">
           <div class="tumblr-wrapper" *ngIf="favorite.content.source == 'TUMBLR'">
-              <app-tumblr [tumblr]=favorite.content.data.tumblr ></app-tumblr>
+              <app-tumblr [tumblr]=favorite.content.data.tumblr [showButtons]=false></app-tumblr>
               <a class="remove-tu"(click)="remove()"><span class="glyphicon glyphicon-remove"></span></a>
           </div>
         </div><!-- tumblr-dash -->

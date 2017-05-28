@@ -7,6 +7,7 @@ import { SessionService } from '../services/session.service';
 })
 export class TweetComponent implements OnInit {
   @Input() tweet: any;
+  @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   constructor(
     private session: SessionService,

@@ -7,12 +7,14 @@ import { SessionService } from '../services/session.service';
 })
 export class YoutubeComponent implements OnInit {
   @Input() video: any;
+  @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   constructor(
     private session: SessionService,
   ) { }
 
   ngOnInit() {
+    console.log(this.showButtons);
   }
 
   onQuote () {
