@@ -76,12 +76,23 @@ li{
   padding-right:5px;
   /*background-color:rgba(200, 110, 0, 0.2);*/
 }
-.popular-tags{
-
+.search-tags{
+  padding:3px;
+  background-color: #f2d8d7;
+  border-radius: 10%;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 3px;
 }
 .trending-tags{
   display: inline-flex;
   margin-right: 10px;
+}
+.glyphicon-remove{
+  margin-left: 3px;
+  width:80%;
+  height:80%;
 }
 /*side bar END*/
 
