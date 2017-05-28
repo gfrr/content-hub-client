@@ -1,0 +1,70 @@
+.edit-button{
+  border:0px;
+  background-color: #d27983;
+}
+.delete-button{
+  border:0px;
+  background-color: #d27983;
+}
+.remove-yt{
+  color: #d27983;
+  position:relative;
+}
+.remove-tw{
+  color: #d27983;
+  position:relative;
+}
+.remove-re{
+  color: #d27983;
+  position:relative;
+}
+.remove-tu{
+  color: #d27983;
+  position:relative;
+}
+.content{
+  display:flex;
+  justify-content: center;
+}
+.content-wrapper{
+  max-width:800px;
+
+}
+/*youtube START*/
+.yt-wrapper{
+  width:100%;
+  height:auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  margin-top:10px;
+}
+/*youtube END*/
+
+/*TWEET START*/
+.tweet-wrapper{
+  display:flex;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+}
+/*TWEET END*/
+
+/*REDDIT START*/
+.reddit-wrapper{
+  display:flex;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+}
+/*REDDIT END*/
+
+/*TUMBLR START*/
+.tumblr-wrapper{
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+  display:flex;
+}
+/*TUMBLR END*/

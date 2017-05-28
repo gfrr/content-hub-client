@@ -3,9 +3,18 @@
   align-items: center;
 }
 .content-image{
+  max-width:200px;
   flex:1;
   margin-right: 5px;
 }
 .content-wrapper{
   flex:3;
+}
+.save-button{
+  border:0px;
+  background-color: #d27983;
+}
+.wat-button{
+  border:0px;
+  background-color: #d27983;
 }
