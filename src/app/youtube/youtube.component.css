@@ -9,12 +9,12 @@ iframe{
   /*height:auto;
   width:504px;*/
 }
-
-.save-button{
-  border:0px;
-  background-color: #d27983;
+.icon-wrapper{
+  margin-top:8px;
+  display: flex;
+  justify-content: space-around;
 }
-.wat-button{
-  border:0px;
-  background-color: #d27983;
+.icon{
+  width: 30px;
+  height: 30px;
 }

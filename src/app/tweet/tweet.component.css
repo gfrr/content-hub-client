@@ -1,16 +1,16 @@
-.save-button{
-  border:0px;
-  background-color: #d27983;
+.icon-wrapper{
+  margin-top:8px;
+  display: flex;
+  justify-content: space-around;
 }
-.wat-button{
-  border:0px;
-  background-color: #d27983;
+.icon{
+  width: 30px;
+  height: 30px;
 }
 /*left side -- profile pic START*/
 .left-profile-pic{
   padding-right: 10px;
   padding-left:0px;
-
 }
 .twitter-pic{
   min-width: 45px;
@@ -60,5 +60,4 @@
 p{
   margin:0px;
 }
-
 /*right side - tweet content END*/
