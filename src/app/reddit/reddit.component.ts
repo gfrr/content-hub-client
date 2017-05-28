@@ -7,6 +7,7 @@ import { SessionService } from '../services/session.service';
 })
 export class RedditComponent implements OnInit {
   @Input() reddit: any;
+  @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   constructor(private session: SessionService,) { }
 

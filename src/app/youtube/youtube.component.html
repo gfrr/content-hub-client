@@ -1,4 +1,6 @@
 
 <iframe [src]="'https://www.youtube.com/embed/' + video | safe"  width="560" height="315" allowfullscreen></iframe>
-<button class="save-button" (click)="save(video)">save</button>
-<button class="wat-button" (click)="onQuote()">wat</button>
+<div *ngIf="showButtons">
+  <button class="save-button" (click)="save(video)">save</button>
+  <button class="wat-button" (click)="onQuote()">wat</button>
+</div>

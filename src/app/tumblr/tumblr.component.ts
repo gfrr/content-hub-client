@@ -8,6 +8,7 @@ import { SessionService } from '../services/session.service';
 })
 export class TumblrComponent implements OnInit {
   @Input() tumblr: any;
+  @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   constructor(private session: SessionService,) { }
 
