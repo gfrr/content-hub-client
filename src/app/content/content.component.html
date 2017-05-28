@@ -6,7 +6,7 @@
           <h5>Your searches:</h5>
           <ul>
             <li *ngFor="let search of searches">
-              <a (click)="searchThis(search)">{{search}}</a>
+              <a (click)="searchThis(search)">{{search}}</a><span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
             </li>
           </ul>
         </div>
