@@ -6,7 +6,7 @@
           <h5>Your searches:</h5>
           <ul>
             <li *ngFor="let search of searches">
-              <a (click)="searchThis(search)">{{search}}</a>
+              <a (click)="searchThis(search)">{{search}}</a><span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
             </li>
           </ul>
         </div>
@@ -30,7 +30,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingYt">
-              <app-youtube [video]=videoId (onFavorite)="next1($event)"></app-youtube>
+              <app-youtube [video]=videoId (onFavorite)="next1($event)" [showButtons]=true></app-youtube>
             </div>
             <!-- ngif loading -->
           </div>
@@ -44,7 +44,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingTweet">
-              <app-tweet [tweet]=tweet (onFavorite)="next1($event)"></app-tweet>
+              <app-tweet [tweet]=tweet (onFavorite)="next1($event)" [showButtons]=true></app-tweet>
             </div>
           </div>
           <!-- twitter end  -->
@@ -56,7 +56,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingReddit">
-              <app-reddit [reddit]=reddit (onFavorite)="next1($event)"></app-reddit>
+              <app-reddit [reddit]=reddit (onFavorite)="next1($event)" [showButtons]=true></app-reddit>
             </div>
           </div>
           <!-- REDDIT END -->
@@ -68,7 +68,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingTumblr">
-              <app-tumblr [tumblr]=tumblr></app-tumblr>
+              <app-tumblr [tumblr]=tumblr (onFavorite)="next1($event)" [showButtons]=true></app-tumblr>
             </div><!-- isloadingTumblr -->
           </div><!-- tumblr-wrapper -->
         </div>

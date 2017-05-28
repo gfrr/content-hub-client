@@ -45,7 +45,6 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
 
     this.session.getTags().subscribe(result =>{
-      // console.log(result);
       this.isLoadingTags = true;
       this.tags = result.filter((elem) =>{
         return elem.name[0] == "#";
@@ -57,9 +56,7 @@ export class ContentComponent implements OnInit {
     })
 
     this.searches = this.session.getSearches();
-    // this.session.getSearches().subscribe(result=> {
-    //   this.searches = result;
-    // })
+
   }
   search(){
     this.isLoadingTweet = false;
@@ -67,7 +64,7 @@ export class ContentComponent implements OnInit {
     this.isLoadingReddit = false;
     this.isLoadingTumblr = false;
     this.index = 0;
-    
+
     this.session.saveSearch({search: this.searchTags}).subscribe(result => {
       console.log(result);
       this.searches = this.session.getSearches();
@@ -132,5 +129,11 @@ export class ContentComponent implements OnInit {
       if(this.indexTumblr >= this.tumblrPosts.length - 1) this.indexTumblr = 0;
       this.tumblr = this.tumblrPosts[this.indexTumblr];
     }
+  }
+
+  remove(query){
+    this.session.removeSearch({search: query}).subscribe(result=>{
+      this.searches = this.session.getSearches();
+    });
   }
 }

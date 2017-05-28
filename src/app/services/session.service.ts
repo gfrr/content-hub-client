@@ -162,7 +162,20 @@ export class SessionService implements CanActivate {
  saveSearch(query){
    let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
    let options = new RequestOptions({ headers: headers});
-   return this.http.patch(`${this.BASE_URL}/users/${this.id}`, query, options)
+   query.action = "add";
+   return this.http.patch(`${this.BASE_URL}/users/${this.id}/search`, query, options)
+        .map((res: Response)=>{
+          let user = res.json() && res.json().user;
+          localStorage.setItem('user', JSON.stringify(user));
+          return true;
+        })
+ }
+
+ removeSearch(query){
+   let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+   let options = new RequestOptions({ headers: headers});
+   query.action = "delete";
+   return this.http.patch(`${this.BASE_URL}/users/${this.id}/search/`, query, options)
         .map((res: Response)=>{
           let user = res.json() && res.json().user;
           localStorage.setItem('user', JSON.stringify(user));
