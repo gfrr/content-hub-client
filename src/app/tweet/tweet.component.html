@@ -15,5 +15,7 @@
       </div><!-- right-tweet-content col-xs-10 col-sm-10 -->
     </div><!-- row -->
 </div><!-- tweet-wrapper -->
-<button class="save-button" (click)="save(tweet)">save</button>
-<button class="save-button" (click)="onQuote()">wat</button>
+<div class="icon-wrapper">
+  <img (click)="save(tweet)" class="icon" src="./assets/images/icons/001-plus.png" alt="save to dashboard">
+  <img (click)="onQuote()" class="icon" src="./assets/images/icons/003-error.png" alt="nahh">
+</div>

@@ -1,7 +1,15 @@
 .reddit-pic-wrapper {
   max-width:200px;
-  
   flex: 1;
+}
+.icon-wrapper{
+  margin-top:8px;
+  display: flex;
+  justify-content: space-around;
+}
+.icon{
+  width: 30px;
+  height: 30px;
 }
 .reddit-info-wrapper {
   display: flex;
