@@ -1,7 +1,7 @@
 
 
 
-
+<div class="swipe-container"  (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
 <div class="reddit-content-wrapper">
   <div class="reddit-title">
     <h4 class="title"><a target="_blank" href="https://reddit.com/{{reddit.data.permalink}}">{{reddit.data.title}}
@@ -28,7 +28,9 @@
 </div><!-- reddi-content-wrapper -->
 
 
+
 <div class="icon-wrapper" *ngIf="showButtons">
   <img (click)="onQuote()" class="icon" src="./assets/images/icons/003-error.png" alt="nahh">
   <img (click)="save(reddit)" class="icon" src="./assets/images/icons/001-plus.png" alt="save to dashboard">
+</div>
 </div>

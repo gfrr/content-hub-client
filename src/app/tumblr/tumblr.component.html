@@ -1,3 +1,5 @@
+<div class="swipe-container"  (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+
 <div class="title">
   {{tumblr.summary}}
 </div><!-- title -->
@@ -26,4 +28,5 @@
 <div class="icon-wrapper" *ngIf="showButtons">
   <img (click)="onQuote()" class="icon" src="./assets/images/icons/003-error.png" alt="nahh">
   <img (click)="save(tumblr)" class="icon" src="./assets/images/icons/001-plus.png" alt="save to dashboard">
+</div>
 </div>
