@@ -17,14 +17,15 @@ export class ContentComponent implements OnInit {
   public tumblrPosts: Object[];
   public tags: any;
   public popular: any;
+  public searches: any;
+  public videoId: string = "";
+  public tweet: string = "";
+  public reddit: any;
   index: number = 0;
   indexVideo: number = 0;
   indexTwitter: number = 0;
   indexTumblr: number = 0;
   indexReddit: number = 0;
-  public videoId: string = "";
-  public tweet: string = "";
-  public reddit: any;
   hidden: boolean = true;
   isLoadingTags: boolean = false;
   isLoadingTweet: boolean = false;
@@ -42,17 +43,23 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.session.getTags().subscribe(result =>{
       // console.log(result);
       this.isLoadingTags = true;
-      this.tags = result.filter((elem)=>{
+      this.tags = result.filter((elem) =>{
         return elem.name[0] == "#";
       });
     });
-    this.session.getPopular().subscribe(result=>{
+    this.session.getPopular().subscribe(result =>{
       this.popular = result.reverse();
-      console.log(this.popular);
+
     })
+
+    this.searches = this.session.getSearches();
+    // this.session.getSearches().subscribe(result=> {
+    //   this.searches = result;
+    // })
   }
   search(){
     this.isLoadingTweet = false;
@@ -60,6 +67,12 @@ export class ContentComponent implements OnInit {
     this.isLoadingReddit = false;
     this.isLoadingTumblr = false;
     this.index = 0;
+    
+    this.session.saveSearch({search: this.searchTags}).subscribe(result => {
+      console.log(result);
+      this.searches = this.session.getSearches();
+    })
+
     this.session.searchYoutube({search: this.searchTags}).subscribe(result => {
       this.result = result.items;
       this.videoId = this.result[this.index].id.videoId;
