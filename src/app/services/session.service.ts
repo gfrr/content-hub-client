@@ -106,10 +106,17 @@ export class SessionService implements CanActivate {
       });
   }
 
+  getSearches(){
+    console.log(JSON.parse(localStorage.user).searches);
+    return JSON.parse(localStorage.user).searches;
+  }
+
+
   getFavorites(){
-    console.log(JSON.parse(localStorage.user));
+    console.log(JSON.parse(localStorage.user).favorites);
     return JSON.parse(localStorage.user).favorites;
   }
+
 
   delete() {
     let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
@@ -150,6 +157,17 @@ export class SessionService implements CanActivate {
     .map((res: Response)=>{
       return res.json();
     })
+ }
+
+ saveSearch(query){
+   let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+   let options = new RequestOptions({ headers: headers});
+   return this.http.patch(`${this.BASE_URL}/users/${this.id}`, query, options)
+        .map((res: Response)=>{
+          let user = res.json() && res.json().user;
+          localStorage.setItem('user', JSON.stringify(user));
+          return true;
+        })
  }
 
   searchYoutube(query){
