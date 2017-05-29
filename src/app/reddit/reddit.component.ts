@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { SessionService } from '../services/session.service';
 @Component({
   selector: 'app-reddit',
   templateUrl: './reddit.component.html',
   styleUrls: ['./reddit.component.css']
 })
-export class RedditComponent implements OnInit {
+export class RedditComponent implements OnChanges {
   @Input() reddit: any;
   @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
@@ -22,7 +22,9 @@ export class RedditComponent implements OnInit {
   };
   constructor(private session: SessionService,) { }
 
-  ngOnInit() {
+  ngOnChanges() {
+
+    console.log("url", this.reddit.data);
   }
   onQuote () {
     this.onFavorite.emit("reddit");
@@ -35,8 +37,9 @@ export class RedditComponent implements OnInit {
       permalink: data.data.permalink,
       title: data.data.title,
       url: data.data.url,
+      thumbnail: data.data.thumbnail,
       preview: {
-        images: data.data.preview.images,
+        images: data.data.thumbnail,
       },
       author: data.data.author,
       subreddit_name_prefixed: data.data.subreddit_name_prefixed,
