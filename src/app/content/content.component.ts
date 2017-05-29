@@ -21,6 +21,7 @@ export class ContentComponent implements OnInit {
   public videoId: string = "";
   public tweet: string = "";
   public reddit: any;
+  searchType: string = "popular";
   index: number = 0;
   indexVideo: number = 0;
   indexTwitter: number = 0;
@@ -42,12 +43,19 @@ export class ContentComponent implements OnInit {
     this.search();
   }
 
+
+
   ngOnInit() {
 
     this.session.getTags().subscribe(result =>{
       this.isLoadingTags = true;
       this.tags = result.filter((elem) =>{
-        return elem.name[0] == "#";
+        if(elem.name[0]=="#"){
+          let test = elem.name.substring(1).replace(/[^A-Za-z 0-9 \.,\?""!@#\$%\^&\*\(\)-_=\+;:<>\/\\\|\}\{\[\]`~]*/g, "");
+          if(test.length> 1) return elem;
+
+        }
+
       });
     });
     this.session.getPopular().subscribe(result =>{
@@ -70,29 +78,41 @@ export class ContentComponent implements OnInit {
       this.searches = this.session.getSearches();
     })
 
-    this.session.searchYoutube({search: this.searchTags}).subscribe(result => {
+    this.session.searchYoutube({search: this.searchTags, type: this.searchType}).subscribe(result => {
       this.result = result.items;
-      this.videoId = this.result[this.index].id.videoId;
-      this.isLoadingYt = true;
+      if(this.result.length > 0){
+        this.videoId = this.result[this.index].id.videoId;
+        this.isLoadingYt = true;
+      }
+
     });
 
-    this.session.searchTwitter({hashtag: this.searchTags}).subscribe(result =>  {
+    this.session.searchTwitter({hashtag: this.searchTags, type: this.searchType}).subscribe(result =>  {
       this.tweets = result.statuses;
-      this.tweet = this.tweets[this.index];
-      this.isLoadingTweet = true;
+      if(this.tweets.length > 0){
+        this.tweet = this.tweets[this.index];
+        this.isLoadingTweet = true;
+      }
+
     });
 
-    this.session.searchReddit({hashtag: this.searchTags}).subscribe(result => {
+    this.session.searchReddit({hashtag: this.searchTags, type: this.searchType}).subscribe(result => {
       this.redditPosts = result.data.children;
-      this.reddit = this.redditPosts[this.index];
-      this.isLoadingReddit = true;
+      if(this.redditPosts.length > 0){
+        this.reddit = this.redditPosts[this.index];
+        this.isLoadingReddit = true;
+      }
+
     });
 
-    this.session.searchTumblr({hashtag: this.searchTags}).subscribe(result=>{
+    this.session.searchTumblr({hashtag: this.searchTags, type: this.searchType}).subscribe(result=>{
       this.tumblrPosts = result.response;
-      this.tumblr = this.tumblrPosts[this.index];
-      console.log(this.tumblr);
-      this.isLoadingTumblr = true;
+      if(this.tumblrPosts.length > 0){
+        this.tumblr = this.tumblrPosts[this.index];
+
+        this.isLoadingTumblr = true;
+      }
+
     });
 
     this.hidden = false;

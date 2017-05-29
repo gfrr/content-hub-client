@@ -25,7 +25,8 @@ import { EditComponent } from './auth/dashboard/edit/edit.component';
 import { DeleteComponent } from './auth/dashboard/delete/delete.component';
 import 'hammerjs';
 
-
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {MdSelectModule, MdRadioModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import 'hammerjs';
     TumblrComponent,
     EditComponent,
     DeleteComponent,
+
     // Ng2TweetModule
   ],
   imports: [
@@ -52,6 +54,9 @@ import 'hammerjs';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
+    // BrowserAnimationsModule,
+    // MdSelectModule,
+    // MdRadioModule
   ],
   providers: [ SessionService],
   bootstrap: [AppComponent]

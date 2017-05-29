@@ -4,9 +4,10 @@
       <div class="side-left col-xs-12 col-sm-3 ">
         <div class="left side">
           <h5>Your searches:</h5>
-            <div class="search-tags" *ngFor="let search of searches; let i=index">
-              <a *ngIf="i<7" (click)="searchThis(search)">#{{search}} </a> <span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
+          <div class="search-tags" *ngFor="let search of searches; let i=index">
+            <a *ngIf="i<7" (click)="searchThis(search)">#{{search}} </a> <span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
           </div>
+
         </div>
         <!-- left side-->
       </div>
@@ -16,9 +17,18 @@
         <div class="search">
           <h3>search for tags</h3>
           <input id="search_tags" placeholder="search tags" type="text" [(ngModel)]="searchTags">
+          <!-- <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">trending</button>
+            <button type="button" class="btn btn-default">popular</button>
+                  </div> -->
+          <form action="">
+            <input type="radio" [(ngModel)]="searchType" name="searchType" value="popular">popular <br>
+            <input type="radio" [(ngModel)]="searchType" name="searchType" value="trending">trending
+          </form>
           <button class="search-btn" id="search-button" (click)="search()">Search</button>
           <button class="search-btn" (click)="next()">More!</button>
-        </div><!-- search -->
+        </div>
+        <!-- search -->
         <!-- youtube start -->
         <div *ngIf=!hidden>
           <div class="yt-wrapper">
@@ -67,27 +77,35 @@
             </div>
             <div *ngIf="isLoadingTumblr">
               <app-tumblr [tumblr]=tumblr (onFavorite)="next1($event)" [showButtons]=true></app-tumblr>
-            </div><!-- isloadingTumblr -->
-          </div><!-- tumblr-wrapper -->
+            </div>
+            <!-- isloadingTumblr -->
+          </div>
+          <!-- tumblr-wrapper -->
         </div>
       </div>
       <!-- col-xs-12 col-md-10 -->
 
       <!-- RIGHT SIDEBAR -->
-        <div class="col-xs-12 col-sm-3">
-            <div class="popular-tags">
-              <h5>Trending tags:</h5>
-              <div class="trending-tags" *ngFor="let tag of tags; let i=index">
-                    <a *ngIf="i<7" (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
-              </div>
-            </div><!-- popular-tag -->
-            <div class="popular-tags">
-              <h5>Most popular tags:</h5>
-                <div class="trending-tags" *ngFor="let pop of popular; let i=index">
-                  <a *ngIf="i<7" (click)="searchThis(pop.substring(1))">{{pop}}</a>
-                </div>
-            </div><!-- popular-tag -->
-        </div><!-- col-xs-12 col-sm-2 -->
-    </div><!-- row -->
-  </div><!-- container -->
-</div><!-- content-wrapper -->
+      <div class="col-xs-12 col-sm-3">
+        <div class="popular-tags">
+          <h5>Trending tags:</h5>
+          <div class="trending-tags" *ngFor="let tag of tags; let i=index">
+            <a *ngIf="i<7" (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
+          </div>
+        </div>
+        <!-- popular-tag -->
+        <div class="popular-tags">
+          <h5>Most popular tags:</h5>
+          <div class="trending-tags" *ngFor="let pop of popular; let i=index">
+            <a *ngIf="i<7" (click)="searchThis(pop.substring(1))">{{pop}}</a>
+          </div>
+        </div>
+        <!-- popular-tag -->
+      </div>
+      <!-- col-xs-12 col-sm-2 -->
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</div>
+<!-- content-wrapper -->
