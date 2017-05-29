@@ -33,6 +33,9 @@ export class ContentComponent implements OnInit {
   isLoadingYt: boolean = false;
   isLoadingReddit: boolean = false;
   isLoadingTumblr: boolean = false;
+
+
+
   constructor(
     private session: SessionService,
   ) { }
@@ -43,6 +46,18 @@ export class ContentComponent implements OnInit {
     this.search();
   }
 
+  slide(tagtype, sign){
+    if(sign== "plus"){
+      tagtype.currentMax+= 10;
+      tagtype.currentMin+= 10;
+    }
+    else{
+      tagtype.currentMax-= 10;
+      tagtype.currentMin-= 10;
+    }
+
+
+  }
 
 
   ngOnInit() {
