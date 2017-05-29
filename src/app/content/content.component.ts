@@ -16,7 +16,19 @@ export class ContentComponent implements OnInit {
   public redditPosts: any;
   public tumblrPosts: Object[];
   public tags: any;
+  public tagCounter: Object = {
+    max: 40,
+    currentMin: 0,
+    currentMax: 10
+
+  }
+
   public popular: any;
+  public popularCounter: Object = {
+    max: 100,
+    currentMin: 0,
+    currentMax: 10,
+  }
   public searches: any;
   public videoId: string = "";
   public tweet: string = "";
@@ -48,12 +60,26 @@ export class ContentComponent implements OnInit {
 
   slide(tagtype, sign){
     if(sign== "plus"){
-      tagtype.currentMax+= 10;
-      tagtype.currentMin+= 10;
+      if(tagtype.currentMax + 5 >= tagtype.max){
+        tagtype.currentMax = 5;
+        tagtype.currentMin = 0;
+      }
+      else {
+        tagtype.currentMax+= 5;
+        tagtype.currentMin+= 5;
+      }
+
     }
     else{
-      tagtype.currentMax-= 10;
-      tagtype.currentMin-= 10;
+     if(tagtype.currentMin - 5 <= 0){
+       tagtype.currentMax = tagtype.max;
+       tagtype.currentMin = tagtype.max - 5;
+     }
+     else{
+       tagtype.currentMax-= 5;
+       tagtype.currentMin-= 5;
+     }
+
     }
 
 
@@ -70,12 +96,20 @@ export class ContentComponent implements OnInit {
           if(test.length> 1) return elem;
 
         }
-
       });
+      this.tagCounter = {
+        max: this.tags.length,
+        currentMin: 0,
+        currentMax: 5
+      }
     });
     this.session.getPopular().subscribe(result =>{
       this.popular = result.reverse();
-
+      this.popularCounter = {
+        max: this.popular.length,
+        currentMin: 0,
+        currentMax: 5
+      }
     })
 
     this.searches = this.session.getSearches();

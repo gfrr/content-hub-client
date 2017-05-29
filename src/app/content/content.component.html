@@ -91,15 +91,19 @@
         <div class="popular-tags">
           <h5>Trending tags:</h5>
           <div class="trending-tags" *ngFor="let tag of tags; let i=index">
-            <a *ngIf="i<7" (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
+            <a *ngIf="i>=tagCounter.currentMin && i <= tagCounter.currentMax" (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
           </div>
+          <span class="glyphicon glyphicon-triangle-left" (click)="slide(tagCounter, minus)"></span>
+          <span class="glyphicon glyphicon-triangle-right" (click)="slide(tagCounter, plus)"></span>
         </div>
         <!-- popular-tag -->
         <div class="popular-tags">
           <h5>Most popular tags:</h5>
           <div class="trending-tags" *ngFor="let pop of popular; let i=index">
-            <a *ngIf="i<7" (click)="searchThis(pop.substring(1))">{{pop}}</a>
+            <a *ngIf="i>=popularCounter.currentMin && i <= popularCounter.currentMax" (click)="searchThis(pop.substring(1))">{{pop}}</a>
           </div>
+          <span class="glyphicon glyphicon-triangle-left" (click)="slide(popularCounter, minus)"></span>
+          <span class="glyphicon glyphicon-triangle-right" (click)="slide(popularCounter, plus)"></span>
         </div>
         <!-- popular-tag -->
       </div>
