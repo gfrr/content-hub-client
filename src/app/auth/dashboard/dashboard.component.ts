@@ -18,7 +18,13 @@ export class DashboardComponent implements OnInit {
   // generateArray(obj){
   //   return Object.keys(obj).map((key)=>{ return {key:key, value:obj[key]}});
   // }
-
+  remove(id, index){
+    console.log("id", id);
+    this.session.removeContent({contentId: id}).subscribe(result=>{
+      console.log(index);
+      this.favoritesData.splice(index, 1);
+    });
+  }
 
   generateFavs(){
     this.favorites = this.session.getFavorites();
@@ -29,7 +35,11 @@ export class DashboardComponent implements OnInit {
 
     })
   }
-
+  // ngOnChanges(){
+  //   this.user = this.session;
+  //   this.favorites = this.session.getFavorites();
+  //   this.generateFavs();
+  // }
   ngOnInit() {
     this.user = this.session;
     this.favorites = this.session.getFavorites();
