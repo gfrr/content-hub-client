@@ -10,8 +10,10 @@
 
   <div class="reddit-info-wrapper">
     <div class="reddit-pic-wrapper">
-      <a href="{{reddit.data.url}}">
-        <img class="pic" src="{{reddit.data.preview.images[0].source.url}}" alt="/assets/images/reddit.png"/>
+      <a href="{{reddit.data.url}}" target="_blank">
+        <img *ngIf="reddit.data.thumbnail == 'self'" class="pic" src="/assets/images/reddit.png" />
+        <img *ngIf="reddit.data.thumbnail != 'self'" class="pic" [src]="reddit.data.thumbnail | safe" >
+        <!-- <iframe [src]="'https://www.youtube.com/embed/' + video | safe"  width="560" height="315" allowfullscreen></iframe> -->
       </a>
     </div><!-- reddit-pic-wrapper -->
     <div class="reddit-text">

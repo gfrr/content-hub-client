@@ -183,7 +183,7 @@ export class ContentComponent implements OnInit {
       if(this.indexVideo >= this.result.length - 1) this.indexVideo = 0;
       this.videoId = this.result[this.indexVideo].id.videoId;
     }
-    if(type== "tweet"){
+    if(type == "tweet"){
       this.indexTwitter++;
       if(this.indexTwitter >= this.tweets.length -1) this.indexTwitter = 0;
       this.tweet = this.tweets[this.indexTwitter];
