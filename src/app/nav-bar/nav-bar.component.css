@@ -29,3 +29,9 @@ ul li a{
   color: white;
 }
 /*navbar end*/
+
+a:hover {
+
+    cursor:pointer;
+
+}
