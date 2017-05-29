@@ -183,6 +183,22 @@ export class SessionService implements CanActivate {
         })
  }
 
+ removeContent(query){
+   let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+   let options = new RequestOptions({ headers: headers});
+
+   return this.http.patch(`${this.BASE_URL}/users/${this.id}/save`, query, options)
+      .map((res: Response)=>{
+        if (res.json().user){
+          console.log(res.json().user);
+          let user = res.json() && res.json().user;
+          localStorage.setItem('user', JSON.stringify(user));
+          return true;
+        }
+        return false;
+      })
+ }
+
   searchYoutube(query){
     return this.http.post(`${this.BASE_URL}/search/youtube`, query)
         .map((response: Response)=>{

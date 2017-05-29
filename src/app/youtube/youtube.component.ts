@@ -14,7 +14,7 @@ export class YoutubeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.showButtons);
+  
   }
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
