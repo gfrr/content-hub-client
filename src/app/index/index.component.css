@@ -1,82 +1,92 @@
-/* START input group */
 h1{
   color: white;
+  font-size: 65px;
+  font-family: 'Patua One', sans-serif;
 }
 input{
   border-radius: 0;
 }
-.input-wrapper{
-  align-items: center;
-  text-align: center;
+.background-image{
+  background: url(/./assets/images/background1.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  width:100vw;
+  height:100vh;
+  z-index:-100;
+  position: fixed;
 }
-.input-group{
-  padding: 20px;
-  max-width: 600px;
-  width: 90vw;
-
-  margin-top: 28vh;
-  display: inline-block;
-  /*text-align: center;*/
-
+.content-center{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
-.search-container{
-  background-color: white;
-  max-width: 600px;
-  width: 100%;
+.content-1{
+  padding-top:10px;
+  padding-bottom:0px;
+  width: 95vw;
+  height:80px;;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
 }
-.tag-editor,.multi-ine{
-  display: inline-block;
+.phone-images{
+  /*border:2px dotted white;*/
+  width:95vw;
+  display: flex;
+  max-width:1200px;
+}
+.phone-cont{
+  padding:0px;
+  color: white;
+  /*border:2px dotted red;*/
+}
+.row{
+  align-items: center;
+  padding:0px;
+  margin:0px;
+}
+.phone-1{
+  width:auto;
+  height:auto;
+  max-height:
+}
+.phone-description{
+;
+  color:white;
+  padding-right:0px;
+  padding-left:0px;
+
+}
+.description-header{
   text-align: center;
-  max-width: 500px;
-  width: 60vw;
-  min-height: 33px;
-  max-height:100px;
-  border-radius: 0;
 }
-/* input group END*/
-/* START carousel*/
-/*from https://stackoverflow.com/questions/19469705/bootstrap-carousel-as-website-background*/
-.carousel { z-index: -99; } /* keeps this behind all content */
-.carousel .item {
-    position: fixed;
-    width: 100vw; height: 100vh;
-    -webkit-transition: opacity 0.5s;
-    -moz-transition: opacity 0.5s;
-    -ms-transition: opacity 0.5s;
-    -o-transition: opacity 0.5s;
-    transition: opacity 0.5s;
-
+.description-wrapper{
+  display: flex;
+  justify-content: center;
+  height:65px;
 }
-.carousel .one {
-    background: url(/assets/images/london.jpg);
-    background-size: cover;
-    /*-moz-background-size: cover;*/
+.description-para{
+  text-align: center;
+  width:80%;
 }
-.carousel .two {
-    background: url(/assets/images/berlin.jpg);
-    background-size: cover;
-    /*-moz-background-size: cover;*/
+h2{
+  margin-bottom:10px;
 }
-.carousel .three {
-    background: url(/assets/images/elephant.jpg);
-    background-size: cover;
-    /*-moz-background-size: cover;*/
+h4{
+  margin-top: 15px;
+  margin-bottom:10px;
 }
-.carousel .four {
-    background: url(/assets/images/beach.jpg);
-    background-size: cover;
-    /*-moz-background-size: cover;*/
+.signup-box{
+  text-align: center;
 }
-.carousel .five {
-    background: url(/assets/images/food.jpg);
-    background-size: cover;
-    /*-moz-background-size: cover;*/
-}
-.carousel .active.left {
-    left:0;
-    opacity:0.5;
-    z-index:-99;
-}
-/* carousel END */
