@@ -4,7 +4,7 @@
         <div class="right-tweet-content col-xs-12 col-sm-12">
               <div class="username-date-wrapper">
                 <img class="twitter-pic" src="{{tweet['user'].profile_image_url}}" >
-                <p class="twitter-username"> {{tweet["user"].name}} </p>
+                <p class="twitter-username"><a target= "_blank" href="https://twitter.com/{{this.tweet['user'].screen_name}}"> {{tweet["user"].name}} </a></p>
                 <p class="twitter-handle">@{{tweet["user"].screen_name }} </p>
                 <br>
                 <a class="date" target= "_blank" href="https://twitter.com/{{this.tweet['user'].id_str}}/status/{{this.tweet['id_str']}}">{{tweet["created_at"] | date}}</a>

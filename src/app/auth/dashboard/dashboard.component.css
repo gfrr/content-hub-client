@@ -1,4 +1,32 @@
+.container-fluid{
+  margin-top:70px;
+  padding:0px;
+}
+.search-tags{
+  padding:3px;
+  background-color: rgba(28, 40, 51, 1);
+  color: #E74C3C;
+  border-radius: 10%;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+.search-tags a {
+  color: white;
+}
+.white-span{
+  color:white;
+}
+h5{
+  margin-bottom:5px;
+}
+.row{
+  margin:0px;
+  padding:0px;
+}
 .edit-button{
+  margin-bottom:0px;
   border:0px;
   background-color: #1C2833;
 }
@@ -7,9 +35,6 @@
   border:0px;
   background-color: #1C2833;
 }
-
-
-
 .remove-yt{
   color: #1C2833;
   position:relative;
@@ -26,19 +51,20 @@
   color: #1C2833;
   position:relative;
 }
-
 .main-content{
-    margin-top: 100px;
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center;
 }
-
 .content{
-
   display:flex;
   justify-content: center;
 }
 .content-wrapper{
   max-width:800px;
-
+}
+.right-side{
+  margin-top:10px;
 }
 /*youtube START*/
 .yt-wrapper{

@@ -7,7 +7,7 @@ div{
 }
 .content-wrapper{
   width:100vw;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 .search-video-cont{
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -36,35 +36,28 @@ div{
 input{
   background-color: white;
 }
-
 input:focus{
   border:2px solid #E74C3C;
 }
-
-
 .search-btn{
   width: 100%;
-    background-color: #1C2833;
-
-    padding: 0px;
-    font-weight: 700;
-    font-size: 16px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
-  }
+  background-color: #1C2833;
+  padding: 0px;
+  font-size: 16px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
+}
 .search-btn:hover{
   color:#E74C3C;
 }
 /*search END*/
-
-
 /*side bar START*/
 h5{
   color:black;
@@ -100,7 +93,6 @@ li{
 
 .search-tags a {
   color: white;
-  font-weight: bold;
 }
 
 .searchfield {
@@ -122,18 +114,16 @@ li{
 }
 
 .trending-tags{
-
- display: inline-flex;
- margin-right: 10px;
- background-color: rgba(28, 40, 51, 1);
- border-radius: 10%;
- margin-right: 10px;
- margin-bottom: 5px;
+  display: inline-flex;
+  margin-right: 10px;
+  background-color: rgba(28, 40, 51, 1);
+  border-radius: 10%;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .trending-tags a {
   color: white;
-  font-weight: bold;
 }
 
 .trending-tags a:hover {
@@ -210,3 +200,17 @@ li{
   /*border: 2px dotted red;*/
 }
 /*TUMBLR END*/
+
+.search2{
+  display:flex;
+}
+
+.search-radio{
+  padding-left: 5vw;
+  padding-right:2vw;
+}
+/* Other styling.. */
+.radio-label{
+  display: inline-block;
+  position: relative;
+}

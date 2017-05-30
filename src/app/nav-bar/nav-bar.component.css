@@ -4,12 +4,12 @@
   z-index:2;
   margin:0px;
   background-color: #1C2833;
-  height: 8vh;
+  height: 7vh;
 }
 ul li span{
   color: #E74C3C;
 }
-.navbar-default .navbar-toggle .icon-bar{
+.navbar-default .navbar-toggle .icon-bar {
   background-color: white;
 }
 ul li a{
