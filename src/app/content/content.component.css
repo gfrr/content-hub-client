@@ -59,7 +59,8 @@ input:focus{
 }
 /*search END*/
 /*side bar START*/
-h5{
+h4{
+  font-weight:500;
   color:black;
   margin-bottom:5px;
 }

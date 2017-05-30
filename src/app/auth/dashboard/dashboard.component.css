@@ -28,7 +28,10 @@
 .white-span{
   color:white;
 }
-h5{
+
+h4{
+  font-weight:500;
+  color:black;
   margin-bottom:5px;
 }
 .row{

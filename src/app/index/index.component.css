@@ -41,13 +41,14 @@ input{
   align-items: center;
   flex-flow: column;
 }
-.phone-images{
-  /*border:2px dotted white;*/
+.phone-images-wrapper{
+  margin-top:10px;
   width:95vw;
   display: flex;
   max-width:1200px;
 }
 .phone-cont{
+  margin-bottom:20px;
   display: flex;
   justify-content: center;
   padding:0px;
