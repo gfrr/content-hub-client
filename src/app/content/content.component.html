@@ -6,25 +6,15 @@
         <div class="left side">
           <h5>Your searches:</h5>
           <div class="search-tags" *ngFor="let search of searches; let i=index">
-            <a *ngIf="i<7" (click)="searchThis(search)">#{{search}} </a> <span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
+            <a *ngIf="i<10" (click)="searchThis(search)">#{{search}} </a> <span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
           </div>
         </div><!-- left side-->
       </div><!-- side-left col-xs-12 col-sm-2 -->
-
-
-        </div>
-        <!-- left side-->
-      </div>
-      <!-- side-left col-xs-12 col-sm-2 -->
-
       <div class="search-video-cont col-xs-12 col-sm-8 ">
         <div class="search">
           <h3>search for tags</h3>
           <input id="search_tags" placeholder="search tags" type="text" [(ngModel)]="searchTags" (keyup.enter)="search()" (keyup.space)="search()">
-          <!-- <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">trending</button>
-            <button type="button" class="btn btn-default">popular</button>
-                  </div> -->
+
                   <div class="search-radio">
                     <form action="">
                       <div class="radio-cont">
@@ -117,8 +107,11 @@
           <div class="trending-tags" *ngFor="let pop of popular; let i=index">
             <a *ngIf="i>=popularCounter.currentMin && i <= popularCounter.currentMax" (click)="searchThis(pop.substring(1))">{{pop}}</a>
           </div>
-          <span class="glyphicon glyphicon-triangle-left" (click)="slide(popularCounter, minus)"></span>
-          <span class="glyphicon glyphicon-triangle-right" (click)="slide(popularCounter, plus)"></span>
+          <div>
+            <span class="glyphicon glyphicon-triangle-left" (click)="slide(popularCounter, minus)"></span>
+            <span class="glyphicon glyphicon-triangle-right" (click)="slide(popularCounter, plus)"></span>
+          </div>
+
         </div>
         <!-- popular-tag -->
       </div>

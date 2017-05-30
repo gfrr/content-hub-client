@@ -33,9 +33,14 @@ div{
   padding-right:5vw;
 
 }
+input{
+  background-color: white;
+}
+
+
+
 .search-btn{
   width: 100%;
-
     background-color: #1C2833;
     padding: 0px;
     font-weight: 700;
@@ -49,7 +54,6 @@ div{
     -moz-transition: all 0.218s;
     -webkit-transition: all 0.218s;
     transition: all 0.218s;
-
   }
 /*search END*/
 
@@ -76,21 +80,29 @@ li{
   /*background-color:rgba(200, 110, 0, 0.2);*/
 }
 .search-tags{
-  background-color: #faefef;
+  padding:3px;
+  background-color: rgba(28, 40, 51, 1);
+  color: #E74C3C;
   border-radius: 10%;
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  cursor: pointer;
 }
+
+.search-tags a {
+  color: #E74C3C;
+}
+
+.search-tags a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .trending-tags{
-  color: black;
   display: inline-flex;
   margin-right: 10px;
-  background-color: #faefef;
-  border-radius: 10%;
-  margin-right: 10px;
-  margin-bottom: 5px;
 }
 .glyphicon-remove{
   margin-left: 3px;
@@ -135,14 +147,3 @@ li{
   /*border: 2px dotted red;*/
 }
 /*TUMBLR END*/
-
-
-.search-radio{
-  padding-left: 5vw;
-  padding-right:5vw;
-}
-/* Other styling.. */
-.radio-label{
-  display: inline-block;
-  position: relative;
-}

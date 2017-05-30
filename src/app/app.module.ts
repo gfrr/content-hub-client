@@ -23,7 +23,7 @@ import { RedditComponent } from './reddit/reddit.component';
 import { TumblrComponent } from './tumblr/tumblr.component';
 import { EditComponent } from './auth/dashboard/edit/edit.component';
 import { DeleteComponent } from './auth/dashboard/delete/delete.component';
-// import { TagInputModule } from 'ng2-tag-input';
+import { TagInputModule } from 'ng2-tag-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 
@@ -57,7 +57,7 @@ import 'hammerjs';
     HttpModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    // TagInputModule
+    TagInputModule
     // BrowserAnimationsModule,
     // MdSelectModule,
     // MdRadioModule
