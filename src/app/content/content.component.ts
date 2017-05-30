@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+
   public searchTags: string = "";
   public trends: any;
   public result: any;
@@ -120,6 +121,9 @@ export class ContentComponent implements OnInit {
 
   }
   search(){
+    if(this.searchTags != ""){
+
+
     if(this.searchTags[0] == "#") this.searchTags = this.searchTags.slice(1);
     this.searchTags = this.searchTags.trim();
     this.isLoadingTweet = false;
@@ -171,6 +175,7 @@ export class ContentComponent implements OnInit {
     });
     this.searchTags = "";
     this.hidden = false;
+      }
   }
 
   next(){
