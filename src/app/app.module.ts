@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
@@ -26,7 +26,8 @@ import { DeleteComponent } from './auth/dashboard/delete/delete.component';
 // import { TagInputModule } from 'ng2-tag-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
-
+// import 'theme';
+import {MaterialModule, MdNativeDateModule, MdSlideToggleModule} from '@angular/material';
 // import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import {MdSelectModule, MdRadioModule} from '@angular/material';
 
@@ -57,7 +58,11 @@ import 'hammerjs';
     HttpModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    // TagInputModule
+    // TagInputModule,
+    MaterialModule,
+    MdNativeDateModule,
+    ReactiveFormsModule,
+    MdSlideToggleModule
     // BrowserAnimationsModule,
     // MdSelectModule,
     // MdRadioModule

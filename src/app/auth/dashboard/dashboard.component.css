@@ -8,6 +8,8 @@
   background-color: #1C2833;
 }
 
+
+
 .remove-yt{
   color: #1C2833;
   position:relative;
@@ -24,7 +26,13 @@
   color: #1C2833;
   position:relative;
 }
+
+.main-content{
+    margin-top: 100px;
+}
+
 .content{
+
   display:flex;
   justify-content: center;
 }

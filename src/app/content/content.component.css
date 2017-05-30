@@ -33,10 +33,19 @@ div{
   padding-right:5vw;
 
 }
+input{
+  background-color: white;
+}
+
+input:focus{
+  border:2px solid #E74C3C;
+}
+
+
 .search-btn{
   width: 100%;
-
     background-color: #1C2833;
+
     padding: 0px;
     font-weight: 700;
     font-size: 16px;
@@ -49,8 +58,10 @@ div{
     -moz-transition: all 0.218s;
     -webkit-transition: all 0.218s;
     transition: all 0.218s;
-
   }
+.search-btn:hover{
+  color:#E74C3C;
+}
 /*search END*/
 
 
@@ -76,22 +87,66 @@ li{
   /*background-color:rgba(200, 110, 0, 0.2);*/
 }
 .search-tags{
-  background-color: #faefef;
+  padding:3px;
+  background-color: rgba(28, 40, 51, 1);
+  color: #E74C3C;
   border-radius: 10%;
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  cursor: pointer;
 }
+
+.search-tags a {
+  color: white;
+  font-weight: bold;
+}
+
+.searchfield {
+  display: flex;
+
+}
+.searchfield input {
+  flex: 3;
+}
+.searchfield button {
+  flex: 1;
+  margin-left: 5px;
+}
+
+.search-tags a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #E74C3C;
+}
+
 .trending-tags{
-  color: black;
-  display: inline-flex;
-  margin-right: 10px;
-  background-color: #faefef;
-  border-radius: 10%;
-  margin-right: 10px;
-  margin-bottom: 5px;
+
+ display: inline-flex;
+ margin-right: 10px;
+ background-color: rgba(28, 40, 51, 1);
+ border-radius: 10%;
+ margin-right: 10px;
+ margin-bottom: 5px;
 }
+
+.trending-tags a {
+  color: white;
+  font-weight: bold;
+}
+
+.trending-tags a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #E74C3C;
+}
+
+.tag-control {
+  display: flex;
+  justify-content: space-around;
+}
+
 .glyphicon-remove{
   margin-left: 3px;
   width:80%;
@@ -135,14 +190,3 @@ li{
   /*border: 2px dotted red;*/
 }
 /*TUMBLR END*/
-
-
-.search-radio{
-  padding-left: 5vw;
-  padding-right:5vw;
-}
-/* Other styling.. */
-.radio-label{
-  display: inline-block;
-  position: relative;
-}
