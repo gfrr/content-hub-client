@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../services/session.service';
+import { FormControl } from '@angular/forms';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs';
+
 // import { Ng2TweetService } from 'ng2-tweet/lib/index';
 
 @Component({
@@ -116,6 +120,8 @@ export class ContentComponent implements OnInit {
 
   }
   search(){
+    if(this.searchTags[0] == "#") this.searchTags = this.searchTags.slice(1);
+    this.searchTags = this.searchTags.trim();
     this.isLoadingTweet = false;
     this.isLoadingYt = false;
     this.isLoadingReddit = false;
