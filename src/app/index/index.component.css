@@ -1,9 +1,10 @@
 h1{
-  color: white;
+  color: #E74C3C;
   font-size: 65px;
   font-family: 'Patua One', sans-serif;
 }
-input{
+
+.navbar-default .navbar-toggle .icon-bar{
   border-radius: 0;
 }
 .background-image{
@@ -89,4 +90,7 @@ h4{
 }
 .signup-box{
   text-align: center;
+}
+a{
+ color: #E74C3C;
 }

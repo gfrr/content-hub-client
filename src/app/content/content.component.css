@@ -37,11 +37,15 @@ input{
   background-color: white;
 }
 
+input:focus{
+  border:2px solid #E74C3C;
+}
 
 
 .search-btn{
   width: 100%;
     background-color: #1C2833;
+
     padding: 0px;
     font-weight: 700;
     font-size: 16px;
@@ -55,6 +59,9 @@ input{
     -webkit-transition: all 0.218s;
     transition: all 0.218s;
   }
+.search-btn:hover{
+  color:#E74C3C;
+}
 /*search END*/
 
 
@@ -92,18 +99,54 @@ li{
 }
 
 .search-tags a {
-  color: #E74C3C;
+  color: white;
+  font-weight: bold;
+}
+
+.searchfield {
+  display: flex;
+
+}
+.searchfield input {
+  flex: 3;
+}
+.searchfield button {
+  flex: 1;
+  margin-left: 5px;
 }
 
 .search-tags a:hover {
   text-decoration: none;
   cursor: pointer;
+  color: #E74C3C;
 }
 
 .trending-tags{
-  display: inline-flex;
-  margin-right: 10px;
+
+ display: inline-flex;
+ margin-right: 10px;
+ background-color: rgba(28, 40, 51, 1);
+ border-radius: 10%;
+ margin-right: 10px;
+ margin-bottom: 5px;
 }
+
+.trending-tags a {
+  color: white;
+  font-weight: bold;
+}
+
+.trending-tags a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #E74C3C;
+}
+
+.tag-control {
+  display: flex;
+  justify-content: space-around;
+}
+
 .glyphicon-remove{
   margin-left: 3px;
   width:80%;
