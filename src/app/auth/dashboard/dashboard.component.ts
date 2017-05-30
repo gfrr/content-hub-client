@@ -36,11 +36,7 @@ export class DashboardComponent implements OnInit {
 
     })
   }
-  // ngOnChanges(){
-  //   this.user = this.session;
-  //   this.favorites = this.session.getFavorites();
-  //   this.generateFavs();
-  // }
+
   ngOnInit() {
     this.user = this.session;
     this.favorites = this.session.getFavorites();
