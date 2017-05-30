@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
@@ -26,10 +26,9 @@ import { DeleteComponent } from './auth/dashboard/delete/delete.component';
 // import { TagInputModule } from 'ng2-tag-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
-// import 'theme';
-import {MaterialModule,MdButtonToggleModule, MdNativeDateModule, MdSlideToggleModule, MdRadioModule, MdSelectModule} from '@angular/material';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-// import {MdSelectModule, MdRadioModule} from '@angular/material';
+import { MaterialModule,MdButtonToggleModule, MdNativeDateModule, MdSlideToggleModule, MdRadioModule, MdSelectModule} from '@angular/material';
+import { TagPipe } from './pipes/tag.pipe';
+
 
 @NgModule({
   declarations: [
@@ -49,8 +48,7 @@ import {MaterialModule,MdButtonToggleModule, MdNativeDateModule, MdSlideToggleMo
     TumblrComponent,
     EditComponent,
     DeleteComponent,
-
-
+    TagPipe,
     // Ng2TweetModule
   ],
   imports: [
