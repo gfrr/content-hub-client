@@ -18,7 +18,7 @@
         <li *ngIf="!this.session.isAuth"><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li *ngIf="this.session.isAuth"><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         <li *ngIf="this.session.isAuth"><a [routerLink] ="['/dashboard']"><span class="glyphicon glyphicon-pushpin"></span> My dashboard</a></li>
-
+      
       </ul>
     </div>
   </div>
