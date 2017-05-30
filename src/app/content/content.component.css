@@ -32,25 +32,21 @@ div{
   padding-right:5vw;
 
 }
-input{
-  background-color: white;
-}
-
 .search-btn{
   width: 100%;
-    background-color: #d27983;
-    padding: 0px;
-    font-weight: 700;
-    font-size: 16px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
+  background-color: #d27983;
+  padding: 0px;
+  font-weight: 700;
+  font-size: 16px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
   }
 /*search END*/
 
@@ -77,17 +73,21 @@ li{
   /*background-color:rgba(200, 110, 0, 0.2);*/
 }
 .search-tags{
-  padding:3px;
   background-color: #faefef;
   border-radius: 10%;
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 .trending-tags{
+  color: black;
   display: inline-flex;
   margin-right: 10px;
+  background-color: #faefef;
+  border-radius: 10%;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 .glyphicon-remove{
   margin-left: 3px;
@@ -132,3 +132,14 @@ li{
   /*border: 2px dotted red;*/
 }
 /*TUMBLR END*/
+
+
+.search-radio{
+  padding-left: 5vw;
+  padding-right:5vw;
+}
+/* Other styling.. */
+.radio-label{
+  display: inline-block;
+  position: relative;
+}
