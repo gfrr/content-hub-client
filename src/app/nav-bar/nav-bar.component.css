@@ -30,9 +30,11 @@ ul li a{
 .navbar-collapse{
   background-color:#1C2833;
 }
+
 .navbar-right{
   margin-right:15px;
 }
+
 .navbar-brand{
   font-family: 'Patua One', cursive;
   color: #E74C3C;
