@@ -169,7 +169,7 @@ export class ContentComponent implements OnInit {
       }
 
     });
-
+    this.searchTags = "";
     this.hidden = false;
   }
 
