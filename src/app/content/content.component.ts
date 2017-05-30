@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-
+  public lastSearch: string = "";
   public searchTags: string = "";
   public trends: any;
   public result: any;
@@ -20,7 +20,9 @@ export class ContentComponent implements OnInit {
   public tumblr: any;
   public redditPosts: any;
   public tumblrPosts: Object[];
-  public tags: any;
+  public tags: any[];
+  public tagReady: Boolean = false;
+  public pubReady: Boolean = false;
   public tagCounter: Object = {
     max: 40,
     currentMin: 0,
@@ -28,7 +30,7 @@ export class ContentComponent implements OnInit {
 
   }
 
-  public popular: any;
+  public popular: any[];
   public popularCounter: Object = {
     max: 100,
     currentMin: 0,
@@ -45,7 +47,7 @@ export class ContentComponent implements OnInit {
   indexTumblr: number = 0;
   indexReddit: number = 0;
   hidden: boolean = true;
-  isLoadingTags: boolean = false;
+
   isLoadingTweet: boolean = false;
   isLoadingYt: boolean = false;
   isLoadingReddit: boolean = false;
@@ -94,7 +96,6 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
 
     this.session.getTags().subscribe(result =>{
-      this.isLoadingTags = true;
       this.tags = result.filter((elem) =>{
         if(elem.name[0]=="#"){
           let test = elem.name.substring(1).replace(/[^A-Za-z 0-9 \.,\?""!@#\$%\^&\*\(\)-_=\+;:<>\/\\\|\}\{\[\]`~]*/g, "");
@@ -107,6 +108,7 @@ export class ContentComponent implements OnInit {
         currentMin: 0,
         currentMax: 5
       }
+      this.tagReady = true;
     });
     this.session.getPopular().subscribe(result =>{
       this.popular = result.reverse();
@@ -115,6 +117,7 @@ export class ContentComponent implements OnInit {
         currentMin: 0,
         currentMax: 5
       }
+      this.pubReady = true;
     })
 
     this.searches = this.session.getSearches();
@@ -125,7 +128,9 @@ export class ContentComponent implements OnInit {
 
 
     if(this.searchTags[0] == "#") this.searchTags = this.searchTags.slice(1);
+
     this.searchTags = this.searchTags.trim();
+    this.lastSearch = this.searchTags;
     this.isLoadingTweet = false;
     this.isLoadingYt = false;
     this.isLoadingReddit = false;

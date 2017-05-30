@@ -8,6 +8,7 @@ import { SessionService } from '../services/session.service';
 })
 export class TumblrComponent implements OnInit {
   @Input() tumblr: any;
+  @Input() search: any;
   @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
@@ -34,7 +35,8 @@ export class TumblrComponent implements OnInit {
       source: "TUMBLR",
       data: {
         tumblr: data
-      }
+      },
+      searchTag: this.search
     }
     ).subscribe(()=>{
       console.log("item saved");

@@ -7,6 +7,7 @@ import { SessionService } from '../services/session.service';
 })
 export class TweetComponent implements OnInit {
   @Input() tweet: any;
+  @Input() search: any;
   @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
@@ -38,7 +39,8 @@ export class TweetComponent implements OnInit {
       source: "TWITTER",
       data: {
         tweet: data
-      }
+      },
+      searchTag: this.search
     }
     ).subscribe(()=>{
       console.log("item saved");

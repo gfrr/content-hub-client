@@ -2,6 +2,7 @@ div{
   font-family: , sans-serif;
 }
 .container-fluid{
+  margin-top:0px;
   padding-left:0px;
   padding-right:0px;
 }
@@ -132,22 +133,31 @@ li{
 }
 
 .tag-control {
+  width: 70px;
   display: flex;
   justify-content: space-around;
 }
-
+.tags-wrapper{
+  display:flex;
+  align-items: center;
+}
 .glyphicon-remove{
   margin-left: 3px;
   width:80%;
   height:80%;
 }
 /*side bar END*/
-.radios{
-  border: 0px;
-  margin: 10px;
+
+.radio-buttons-wrapper{
+  display: flex;
+  justify-content: center;
 }
-
-
+.trending-radio{
+  margin-left: 10px;
+}
+.popular-radio{
+  margin-right:10px;
+}
 /*.radios-group-buttons {
   margin: 6px;
   height: 5vh;
@@ -162,7 +172,8 @@ li{
 
 .radious-group-buttons button{
   color: #E74C3C !important;
-}*/
+}
+*/
 /*youtube START*/
 .yt-wrapper{
   width:100%;
@@ -199,17 +210,3 @@ li{
   /*border: 2px dotted red;*/
 }
 /*TUMBLR END*/
-
-.search2{
-  display:flex;
-}
-
-.search-radio{
-  padding-left: 5vw;
-  padding-right:2vw;
-}
-/* Other styling.. */
-.radio-label{
-  display: inline-block;
-  position: relative;
-}
