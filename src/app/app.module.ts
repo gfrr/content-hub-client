@@ -27,7 +27,7 @@ import { DeleteComponent } from './auth/dashboard/delete/delete.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 // import 'theme';
-import {MaterialModule, MdNativeDateModule, MdSlideToggleModule} from '@angular/material';
+import {MaterialModule,MdButtonToggleModule, MdNativeDateModule, MdSlideToggleModule, MdRadioModule, MdSelectModule} from '@angular/material';
 // import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import {MdSelectModule, MdRadioModule} from '@angular/material';
 
@@ -50,6 +50,7 @@ import {MaterialModule, MdNativeDateModule, MdSlideToggleModule} from '@angular/
     EditComponent,
     DeleteComponent,
 
+
     // Ng2TweetModule
   ],
   imports: [
@@ -62,7 +63,10 @@ import {MaterialModule, MdNativeDateModule, MdSlideToggleModule} from '@angular/
     MaterialModule,
     MdNativeDateModule,
     ReactiveFormsModule,
-    MdSlideToggleModule
+    MdSlideToggleModule,
+    MdRadioModule,
+    MdSelectModule,
+    MdButtonToggleModule
     // BrowserAnimationsModule,
     // MdSelectModule,
     // MdRadioModule

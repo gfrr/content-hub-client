@@ -9,25 +9,20 @@
           </div>
       </div><!-- side-left col-xs-12 col-sm-2 -->
       <div class="search-video-cont col-xs-12 col-sm-8 ">
+
         <div class="search">
           <h3>search one hashtag</h3>
           <div class="searchfield">
             <input id="search_tags" placeholder="#ironhack" type="text" [(ngModel)]="searchTags" (keyup.enter)="search()" (keyup.space)="search()">
-            <button class="search-btn" id="search-button" (click)="search()">Search</button>
+                <button class="search-btn" id="search-button" (click)="search()">Search</button>
+                <div class="radios">
           </div>
-                  <div class="search-radio">
-                    <form action="">
-                      <div class="radio-cont">
-                      <input class="radio-input" id="a-option"type="radio" [(ngModel)]="searchType" name="searchType" value="popular">
-                      <label class="radio-label" for="a-option"><span class="radio-span">popular</span></label>
-                    </div>
-                    <div class="radio-cont">
-                      <input type="radio" id="b-option" [(ngModel)]="searchType" name="searchType" value="trending">
-                      <label class="radio-label" for="b-option"><span class="radio-span">trending</span></label>
-                    </div><!-- radio cont -->
-                    </form>
-                  </div><!-- search-radio -->
         </div><!-- search -->
+        <md-radio-group [(ngModel)]="searchType">
+          <md-radio-button class="radiobuttons" value="popular">Popular</md-radio-button>
+          <md-radio-button class="radiobuttons" value="trending">Trending</md-radio-button>
+        </md-radio-group>
+      </div>
         <!-- YOUTUBE START -->
         <div *ngIf=!hidden>
           <div class="yt-wrapper">

@@ -143,7 +143,27 @@ li{
   height:80%;
 }
 /*side bar END*/
+.radios{
+  border: 0px;
+  margin: 10px;
+}
 
+
+/*.radios-group-buttons {
+  margin: 6px;
+  height: 5vh;
+  background-color:rgba(28, 40, 51, 1);
+  border-radius: 3px;
+  color: white;
+}
+
+.radios-group-buttons:active {
+  color: #E74C3C;
+}
+
+.radious-group-buttons button{
+  color: #E74C3C !important;
+}*/
 /*youtube START*/
 .yt-wrapper{
   width:100%;
