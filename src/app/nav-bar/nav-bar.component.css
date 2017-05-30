@@ -7,19 +7,29 @@
   height: 8vh;
 }
 ul li span{
-
   color: #E74C3C;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: white;
 }
 ul li a{
   font-family: 'Patua One', cursive;
-    color: white;
+  color: white;
 }
 #logout-button{
   border:0px;
-
   background-color: #1C2833;
 }
-
+.navbar-toggle:hover{
+  border:#E74C3C;
+  background-color:#E74C3C;
+}
+.collapsed{
+  /*background-color:#E74C3C;*/
+}
+.navbar-collapse{
+  background-color:#1C2833;
+}
 .navbar-brand{
   font-family: 'Patua One', cursive;
   color: #E74C3C;
@@ -33,7 +43,5 @@ ul li a{
 /*navbar end*/
 
 a:hover {
-
-    cursor:pointer;
-
+  cursor:pointer;
 }
