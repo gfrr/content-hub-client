@@ -30,7 +30,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingYt">
-              <app-youtube [video]=videoId (onFavorite)="next1($event)" [showButtons]=true></app-youtube>
+              <app-youtube [video]=videoId (onFavorite)="next1($event)" [showButtons]=true [search]="lastSearch"></app-youtube>
             </div><!-- ngif isLoading -->
           </div><!-- yt-wrapper -->
           <!-- YOUTUBE END -->
@@ -42,7 +42,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingTweet">
-              <app-tweet [tweet]=tweet (onFavorite)="next1($event)" [showButtons]=true></app-tweet>
+              <app-tweet [tweet]=tweet (onFavorite)="next1($event)" [showButtons]=true [search]="lastSearch"></app-tweet>
             </div>
           </div><!-- tweet-wrapper -->
           <!-- TWITTER END  -->
@@ -54,7 +54,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingReddit">
-              <app-reddit [reddit]=reddit (onFavorite)="next1($event)" [showButtons]=true></app-reddit>
+              <app-reddit [reddit]=reddit (onFavorite)="next1($event)" [showButtons]=true [search]="lastSearch"></app-reddit>
             </div>
           </div><!-- reddit-wrapper -->
           <!-- REDDIT END -->
@@ -66,7 +66,7 @@
               </p>
             </div>
             <div *ngIf="isLoadingTumblr">
-              <app-tumblr [tumblr]=tumblr (onFavorite)="next1($event)" [showButtons]=true></app-tumblr>
+              <app-tumblr [tumblr]=tumblr (onFavorite)="next1($event)" [showButtons]=true [search]="lastSearch"></app-tumblr>
             </div><!-- isloadingTumblr -->
           </div><!-- tumblr-wrapper -->
           <!-- TUMBLR END -->
@@ -75,7 +75,7 @@
       <!-- END middle section, search and video content starts here -->
       <!-- RIGHT SIDEBAR -->
       <div class="col-xs-12 col-sm-3">
-        <div class="popular-tags">
+        <div  *ngIf="tagReady" class="popular-tags">
           <h5>Trending tags:</h5>
 
           <div class="trending-tags" *ngFor="let tag of tags | tag:tagCounter.currentMin:tagCounter.currentMax; let i=index">
@@ -86,12 +86,12 @@
             <span class="glyphicon glyphicon-triangle-right" (click)="slide(tagCounter, plus)"></span>
           </div>
         </div><!-- popular-tag -->
-        <div class="popular-tags">
+        <div *ngIf="pubReady" class="popular-tags">
           <h5>Most popular tags:</h5>
-          <div class="trending-tags" *ngFor="let pop of popular | tag:popularCounter.currentMin:popularCounter.currentMax; let i=index">
+          <div  class="trending-tags" *ngFor="let pop of popular | tag:popularCounter.currentMin:popularCounter.currentMax; let i=index">
             <a (click)="searchThis(pop.substring(1))">{{pop}}</a>
-
-          </div><!-- trending-tags  -->
+          </div>
+          <!-- trending-tags  -->
           <div class="tag-control">
             <span class="glyphicon glyphicon-triangle-left" (click)="slide(popularCounter, minus)"></span>
             <span class="glyphicon glyphicon-triangle-right" (click)="slide(popularCounter, plus)"></span>

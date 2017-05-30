@@ -7,6 +7,7 @@ import { SessionService } from '../services/session.service';
 })
 export class RedditComponent implements OnChanges {
   @Input() reddit: any;
+  @Input() search: any;
   @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
@@ -52,7 +53,8 @@ export class RedditComponent implements OnChanges {
       source: "REDDIT",
       data: {
         reddit: newReddit
-      }
+      },
+      searchTag: this.search
     }
     ).subscribe(()=>{
       console.log("item saved");
