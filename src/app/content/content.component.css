@@ -7,7 +7,7 @@ div{
 }
 .content-wrapper{
   width:100vw;
-  margin-top: 75px;
+  margin-top: 70px;
 }
 .search-video-cont{
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -33,27 +33,31 @@ div{
   padding-right:5vw;
 
 }
+input{
+  background-color: white;
+}
+input:focus{
+  border:2px solid #E74C3C;
+}
 .search-btn{
   width: 100%;
-
-    background-color: #1C2833;
-    padding: 0px;
-    font-weight: 700;
-    font-size: 16px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
-
-  }
+  background-color: #1C2833;
+  padding: 0px;
+  font-size: 16px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
+}
+.search-btn:hover{
+  color:#E74C3C;
+}
 /*search END*/
-
-
 /*side bar START*/
 h5{
   color:black;
@@ -76,22 +80,63 @@ li{
   /*background-color:rgba(200, 110, 0, 0.2);*/
 }
 .search-tags{
-  background-color: #faefef;
+  padding:3px;
+  background-color: rgba(28, 40, 51, 1);
+  color: #E74C3C;
   border-radius: 10%;
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  cursor: pointer;
 }
+
+.search-tags a {
+  color: white;
+}
+
+.searchfield {
+  display: flex;
+
+}
+.searchfield input {
+  flex: 3;
+}
+.searchfield button {
+  flex: 1;
+  margin-left: 5px;
+}
+
+.search-tags a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #E74C3C;
+}
+
 .trending-tags{
-  color: black;
   display: inline-flex;
   margin-right: 10px;
-  background-color: #faefef;
+  background-color: rgba(28, 40, 51, 1);
   border-radius: 10%;
   margin-right: 10px;
   margin-bottom: 5px;
 }
+
+.trending-tags a {
+  color: white;
+}
+
+.trending-tags a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #E74C3C;
+}
+
+.tag-control {
+  display: flex;
+  justify-content: space-around;
+}
+
 .glyphicon-remove{
   margin-left: 3px;
   width:80%;
@@ -135,6 +180,7 @@ li{
   /*border: 2px dotted red;*/
 }
 /*TUMBLR END*/
+
 .search2{
   display:flex;
 }

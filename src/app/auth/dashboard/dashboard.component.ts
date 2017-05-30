@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   displayEdit: boolean = false;
   user: any;
+  public searches :any;
   favorites: any;
   favoritesData: any = [];
   constructor(private session: SessionService,
@@ -44,7 +45,9 @@ export class DashboardComponent implements OnInit {
     this.user = this.session;
     this.favorites = this.session.getFavorites();
     this.generateFavs();
+    this.searches = this.session.getSearches();
   }
+
   edit(){
     this.displayEdit = true;
   }
@@ -52,5 +55,10 @@ export class DashboardComponent implements OnInit {
     this.session.delete().subscribe(() => {
         this.session.logout();
       });
+  }
+  removeTag(query){
+    this.session.removeSearch({search: query}).subscribe(result=>{
+      this.searches = this.session.getSearches();
+    });
   }
 }
