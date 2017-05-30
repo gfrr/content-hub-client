@@ -7,6 +7,7 @@ import { SessionService } from '../services/session.service';
 })
 export class YoutubeComponent implements OnInit {
   @Input() video: any;
+  @Input() search: any;
   @Input() showButtons: boolean;
   @Output() onFavorite = new EventEmitter<string>();
   constructor(
@@ -14,7 +15,7 @@ export class YoutubeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  
+
   }
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
@@ -38,7 +39,8 @@ export class YoutubeComponent implements OnInit {
       source: "YOUTUBE",
       data: {
         video: data
-      }
+      },
+      searchTag: this.search
     }
     ).subscribe(()=>{
       console.log("item saved");
