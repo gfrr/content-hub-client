@@ -35,7 +35,6 @@ export class SessionService implements CanActivate {
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem('token')) {
       this.token  = localStorage.getItem('token');
-      console.log(jwtDecode(this.token));
       this.user   = jwtDecode(this.token).user;
       this.id = jwtDecode(this.token).id;
       this.priv = jwtDecode(this.token).private;
@@ -61,7 +60,6 @@ export class SessionService implements CanActivate {
           // set token property
           this.token = token;
           this.user = jwtDecode(token).user;
-          console.log(jwtDecode(this.token));
           this.id = jwtDecode(this.token).id;
           // store username and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('token', token );
@@ -83,7 +81,6 @@ export class SessionService implements CanActivate {
               // set token property
               this.token = token;
               this.user = jwtDecode(token).user;
-              console.log(jwtDecode(this.token));
               this.id = jwtDecode(this.token).id;
               this.isAuth = true;
               // store username and jwt token in local storage to keep user logged in between page refreshes
@@ -99,7 +96,7 @@ export class SessionService implements CanActivate {
     let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
 
     let options = new RequestOptions({ headers: headers });
-    console.log(options);
+
     return this.http.post(`${this.BASE_URL}/users/${this.id}/save`, data, options)
       .map((res: Response) => {
           let user = res.json() && res.json().user;
@@ -192,7 +189,6 @@ export class SessionService implements CanActivate {
    return this.http.patch(`${this.BASE_URL}/users/${this.id}/save`, query, options)
       .map((res: Response)=>{
         if (res.json().user){
-          console.log(res.json().user);
           let user = res.json() && res.json().user;
           localStorage.setItem('user', JSON.stringify(user));
           return true;
