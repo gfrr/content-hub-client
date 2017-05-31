@@ -2,10 +2,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-3 search-section">
-      <div>
+      <div >
 
         <h4>Filter your content by hashtag</h4>
-        <div class="tag-input-wrapper">
+        <div class="tag-input-wrappertags">
           <tag-input [ngModel]="[]"
           [theme]="'dark'"
           [onlyFromAutocomplete]=true
@@ -18,13 +18,16 @@
         </tag-input>
       </div>
     </div>
-    <br />
-    <h4>Manage your search history:</h4>
-    <div class="search-tags" *ngFor="let search of searches; let i=index">
-        #{{search}}
-        <span (click)="removeTag(search)" class="glyphicon glyphicon-remove remove"></span>
-      </div><!-- search-tags -->
-  </div><!-- search-section -->
+    <div>
+      <h4>Manage your search history:</h4>
+      <div class="search-tags" *ngFor="let search of searches; let i=index">
+          #{{search}}
+          <span (click)="removeTag(search)" class="glyphicon glyphicon-remove remove"></span>
+        </div><!-- search-tags -->
+
+    </div>
+
+    </div><!-- search-section -->
   <div class="col-xs-12 col-sm-8 content">
 
     <div class="content-wrapper" *ngIf="favorites.length>0">
