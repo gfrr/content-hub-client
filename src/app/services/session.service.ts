@@ -106,13 +106,11 @@ export class SessionService implements CanActivate {
   }
 
   getSearches(){
-    console.log(JSON.parse(localStorage.user).searches);
     return JSON.parse(localStorage.user).searches;
   }
 
 
   getFavorites(){
-    console.log(JSON.parse(localStorage.user).favorites);
     return JSON.parse(localStorage.user).favorites;
   }
 
