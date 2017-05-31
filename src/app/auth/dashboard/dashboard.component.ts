@@ -11,14 +11,13 @@ import {MdDialog, MdDialogRef} from '@angular/material';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  displayEdit: boolean = false;
-  user: any;
-  visible: boolean = true;
-  filtered: any = undefined;
+  public user: any;
+  public visible: boolean = true;
+  public filtered: any = undefined;
   public searches :any;
-  autocompleteItems = [];
-  favorites: any;
-  favoritesData: any = [];
+  public autocompleteItems = [];
+  public favorites: any;
+  public favoritesData: any = [];
   constructor(
     private session: SessionService,
     private router: Router,
@@ -26,14 +25,12 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   onItemAdded(event){
-    console.log(event.value);
     if(typeof(this.filtered)=="undefined") this.filtered = [];
-    console.log(event.value.substring(1));
     this.filtered.push(event.value.substring(1));
   }
   onItemRemoved(event){
     console.log(event.value);
-    this.filtered.splice(this.filtered.indexOf(event.value), 1);
+    this.filtered = this.filtered.filter((elem)=> elem != event.value.substring(1));
     if(this.filtered.length < 1) this.filtered = undefined;
   }
 
@@ -49,9 +46,7 @@ export class DashboardComponent implements OnInit {
     this.favorites.forEach((favorite)=>{
       this.session.getFavorite(favorite).subscribe(result=> {
         this.favoritesData.push(result);
-
       });
-
     })
   }
 
@@ -61,12 +56,8 @@ export class DashboardComponent implements OnInit {
     this.generateFavs();
     this.searches = this.session.getSearches();
     this.autocompleteItems = this.searches.map((elem)=> "#"+elem);
-
   }
 
-  edit(){
-    this.displayEdit = true;
-  }
   delete(){
     this.visible = false;
   }
