@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2DropdownModule } from 'ng2-material-dropdown';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
@@ -23,8 +25,8 @@ import { RedditComponent } from './reddit/reddit.component';
 import { TumblrComponent } from './tumblr/tumblr.component';
 import { EditComponent } from './auth/dashboard/edit/edit.component';
 import { DeleteComponent } from './auth/dashboard/delete/delete.component';
-import { TagInputModule } from 'ng2-tag-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TagInputModule } from 'ng2-tag-input';
 import 'hammerjs';
 import { MaterialModule,MdButtonToggleModule, MdNativeDateModule, MdSlideToggleModule, MdRadioModule, MdSelectModule} from '@angular/material';
 import { TagPipe } from './pipes/tag.pipe';
@@ -53,6 +55,7 @@ import { ContentPipe } from './pipes/content.pipe';
     ContentPipe,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -65,7 +68,8 @@ import { ContentPipe } from './pipes/content.pipe';
     MdSlideToggleModule,
     MdRadioModule,
     MdSelectModule,
-    MdButtonToggleModule
+    MdButtonToggleModule,
+
   ],
   providers: [ SessionService],
   bootstrap: [AppComponent]

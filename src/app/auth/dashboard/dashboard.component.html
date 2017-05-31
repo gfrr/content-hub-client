@@ -10,7 +10,8 @@
                        [addOnBlur]="true"
                        [clearOnBlur]="true"
                        (onAdd)="onItemAdded($event)"
-                       (onRemove)="onItemRemoved($event)">
+                       (onRemove)="onItemRemoved($event)"
+                       >
 
                 <tag-input-dropdown [autocompleteItems]="autocompleteItems">
                 </tag-input-dropdown>
@@ -19,7 +20,9 @@
      <br />
       <h4>manage your search history searches:</h4>
       <div class="search-tags" *ngFor="let search of searches; let i=index">
-        <a (click)="searchThis(search)">#{{search}} </a> <span (click)="removeTag(search)" class="glyphicon glyphicon-remove"></span>
+
+          #{{search}}
+        <span (click)="removeTag(search)" class="glyphicon glyphicon-remove remove"></span>
       </div><!-- search-tags -->
     </div><!-- search-section -->
     <div class="col-xs-12 col-sm-8 content">
@@ -29,25 +32,25 @@
           <div class="youtube-dash">
             <div class="yt-wrapper" *ngIf="favorite.content.source == 'YOUTUBE'">
               <app-youtube [video]=favorite.content.data.video [showButtons]=false></app-youtube>
-              <a class="remove-yt" (click)="remove(favorite.content._id, i)"><span  class="glyphicon glyphicon-remove"></span></a>
+              <a class="remove-yt remove" (click)="remove(favorite.content._id, i)"><span  class="glyphicon glyphicon-remove"></span></a>
             </div><!-- yt-wrapper -->
           </div><!-- youtube-dash -->
           <div class="twitter-dash">
             <div class="tweet-wrapper" *ngIf="favorite.content.source == 'TWITTER'">
               <app-tweet [tweet]=favorite.content.data.tweet [showButtons]=false></app-tweet>
-              <a class="remove-tw"(click)="remove(favorite.content._id, i)"><span class="glyphicon glyphicon-remove"></span></a>
+              <a class="remove-tw remove"(click)="remove(favorite.content._id, i)"><span class="glyphicon glyphicon-remove"></span></a>
             </div><!-- tweet-wrapper -->
           </div><!-- twitter-dash -->
           <div class="reddit-dash">
             <div class="reddit-wrapper" *ngIf="favorite.content.source == 'REDDIT'">
               <app-reddit [reddit]=favorite.content.data.reddit [showButtons]=false ></app-reddit>
-              <a class="remove-re"(click)="remove(favorite.content._id, i)"><span class="glyphicon glyphicon-remove"></span></a>
+              <a class="remove-re remove"(click)="remove(favorite.content._id, i)"><span class="glyphicon glyphicon-remove"></span></a>
             </div><!-- reddit-wrapper -->
           </div><!-- reddit-dash -->
           <div class="tumblr-dash">
             <div class="tumblr-wrapper" *ngIf="favorite.content.source == 'TUMBLR'">
               <app-tumblr [tumblr]=favorite.content.data.tumblr [showButtons]=false></app-tumblr>
-              <a class="remove-tu"(click)="remove(favorite.content._id, i)"><span class="glyphicon glyphicon-remove"></span></a>
+              <a class="remove-tu remove"(click)="remove(favorite.content._id, i)"><span class="glyphicon glyphicon-remove"></span></a>
             </div><!-- tumblr-wrapper -->
           </div><!-- tumblr-dash -->
         </div><!-- *ngFor -->
@@ -56,11 +59,14 @@
     <div class="col-xs-12 col-sm-3 right-side">
 
         <button *ngIf="visible" class="delete-button" (click)="delete()">delete profile</button>
-        <div *ngIf="!visible">
+        <div *ngIf="!visible" class="confirm">
           <p>
             CONFIRM DELETE
           </p>
-          <button (click)="yes()">YES</button><button (click)="no()">NO</button>
+          <div>
+              <button class="delete-button" (click)="yes()">YES</button><button class="delete-button" (click)="no()">NO</button>
+          </div>
+
         </div>
 
 
