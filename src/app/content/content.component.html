@@ -3,23 +3,31 @@
   <div class="container-fluid">
     <div class="row">
       <div class="side-left col-xs-12 col-sm-3 ">
-          <h5>Your searches:</h5>
+          <h4>Your searches:</h4>
           <div class="search-tags" *ngFor="let search of searches; let i=index">
             <a *ngIf="i<10" (click)="searchThis(search)">#{{search}} </a> <span (click)="remove(search)" class="glyphicon glyphicon-remove"></span>
-          </div>
+          </div><!-- search-tags -->
       </div><!-- side-left col-xs-12 col-sm-2 -->
       <div class="search-video-cont col-xs-12 col-sm-8 ">
-
         <div class="search">
           <h3>search one hashtag</h3>
           <div class="searchfield">
             <input id="search_tags" placeholder="#ironhack" type="text" [(ngModel)]="searchTags" (keyup.enter)="search()" (keyup.space)="search()">
                 <button class="search-btn" id="search-button" (click)="search()">Search</button>
         </div><!-- search -->
-        <md-radio-group [(ngModel)]="searchType">
-          <md-radio-button  class="radiobuttons" value="popular">Popular</md-radio-button>
-          <md-radio-button class="radiobuttons" value="trending">Trending</md-radio-button>
-        </md-radio-group>
+
+
+          <md-radio-group [(ngModel)]="searchType">
+            <div class="radio-buttons-wrapper">
+              <div class="popular-radio">
+                <md-radio-button class="radiobuttons" value="popular">Popular</md-radio-button>
+              </div><!-- popular-radio -->
+              <div class="trending-radio">
+                <md-radio-button class="radiobuttons" value="trending">Trending</md-radio-button>
+              </div><!-- trending-radio -->
+            </div><!-- radio-buttons-wrapper -->
+          </md-radio-group>
+
       </div>
         <!-- YOUTUBE START -->
         <div *ngIf=!hidden>
@@ -76,26 +84,32 @@
       <!-- RIGHT SIDEBAR -->
       <div class="col-xs-12 col-sm-3">
         <div  *ngIf="tagReady" class="popular-tags">
-          <h5>Trending tags:</h5>
-
-          <div class="trending-tags" *ngFor="let tag of tags | tag:tagCounter.currentMin:tagCounter.currentMax; let i=index">
+            <div class="tags-wrapper">
+            <h4>Trending tags:</h4>
+            <div class="tag-control">
+              <span class="glyphicon glyphicon-triangle-left" (click)="slide(tagCounter, minus)"></span>
+              <span class="glyphicon glyphicon-triangle-right" (click)="slide(tagCounter, plus)"></span>
+            </div>
+            </div>
+          <div class="search-tags" *ngFor="let tag of tags | tag:tagCounter.currentMin:tagCounter.currentMax; let i=index">
             <a (click)="searchThis(tag.name.substring(1))">{{tag.name}}</a>
           </div>
-          <div class="tag-control">
-            <span class="glyphicon glyphicon-triangle-left" (click)="slide(tagCounter, minus)"></span>
-            <span class="glyphicon glyphicon-triangle-right" (click)="slide(tagCounter, plus)"></span>
-          </div>
         </div><!-- popular-tag -->
+
         <div *ngIf="pubReady" class="popular-tags">
-          <h5>Most popular tags:</h5>
-          <div  class="trending-tags" *ngFor="let pop of popular | tag:popularCounter.currentMin:popularCounter.currentMax; let i=index">
-            <a (click)="searchThis(pop.substring(1))">{{pop}}</a>
+          <div class="tags-wrapper">
+            <div class="">
+              <h4>Most popular tags:</h4>
+            </div>
+            <div class="tag-control">
+              <span class="glyphicon glyphicon-triangle-left" (click)="slide(popularCounter, minus)"></span>
+              <span class="glyphicon glyphicon-triangle-right" (click)="slide(popularCounter, plus)"></span>
+            </div>
           </div>
-          <!-- trending-tags  -->
-          <div class="tag-control">
-            <span class="glyphicon glyphicon-triangle-left" (click)="slide(popularCounter, minus)"></span>
-            <span class="glyphicon glyphicon-triangle-right" (click)="slide(popularCounter, plus)"></span>
-          </div>
+
+            <div  class="search-tags" *ngFor="let pop of popular | tag:popularCounter.currentMin:popularCounter.currentMax; let i=index">
+              <a (click)="searchThis(pop.substring(1))">{{pop}}</a>
+            </div>
 
         </div><!-- popular-tags -->
       </div><!-- col-xs-12 col-sm-2 -->

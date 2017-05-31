@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-3 search-section">
-      <h5>Your searches:</h5>
+      <h4>Your searches:</h4>
       <div class="search-tags" *ngFor="let search of searches; let i=index">
         <a *ngIf="i<10" (click)="searchThis(search)">#{{search}} </a> <span (click)="removeTag(search)" class="glyphicon glyphicon-remove"></span>
       </div><!-- search-tags -->

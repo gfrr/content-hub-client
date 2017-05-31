@@ -2,6 +2,16 @@
   margin-top:70px;
   padding:0px;
 }
+.search-video-cont{
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding-top:1vh;
+  padding-bottom:1vh;
+  margin:0px;
+  padding-left: 0px;
+  padding-right:0px;
+  margin-bottom: 10px;
+  /*background-color:rgba(255, 0, 0, 0.1);*/
+}
 .search-tags{
   padding:3px;
   background-color: rgba(28, 40, 51, 1);
@@ -18,7 +28,10 @@
 .white-span{
   color:white;
 }
-h5{
+
+h4{
+  font-weight:500;
+  color:black;
   margin-bottom:5px;
 }
 .row{
