@@ -16,6 +16,7 @@
                 <button class="search-btn" id="search-button" (click)="search()">Search</button>
         </div><!-- search -->
 
+
           <md-radio-group [(ngModel)]="searchType">
             <div class="radio-buttons-wrapper">
               <div class="popular-radio">
@@ -26,6 +27,7 @@
               </div><!-- trending-radio -->
             </div><!-- radio-buttons-wrapper -->
           </md-radio-group>
+
       </div>
         <!-- YOUTUBE START -->
         <div *ngIf=!hidden>

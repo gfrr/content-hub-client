@@ -15,6 +15,7 @@ export class SessionService implements CanActivate {
   public isAuth: boolean;
   public user: string;
   public id: string;
+  public priv: boolean;
 
 	BASE_URL: string = 'http://localhost:3000';
 
@@ -37,6 +38,7 @@ export class SessionService implements CanActivate {
       console.log(jwtDecode(this.token));
       this.user   = jwtDecode(this.token).user;
       this.id = jwtDecode(this.token).id;
+      this.priv = jwtDecode(this.token).private;
       this.isAuth = true;
       return true;
     }

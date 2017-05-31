@@ -19,11 +19,11 @@ export class ContentComponent implements OnInit {
   public tweets: any;
   public tumblr: any;
   public redditPosts: any;
-  public tumblrPosts: Object[];
+  public tumblrPosts: object[];
   public tags: any[];
-  public tagReady: Boolean = false;
-  public pubReady: Boolean = false;
-  public tagCounter: Object = {
+  public tagReady: boolean = false;
+  public pubReady: boolean = false;
+  public tagCounter: object = {
     max: 40,
     currentMin: 0,
     currentMax: 10
@@ -31,7 +31,7 @@ export class ContentComponent implements OnInit {
   }
 
   public popular: any[];
-  public popularCounter: Object = {
+  public popularCounter: object = {
     max: 100,
     currentMin: 0,
     currentMax: 10,
