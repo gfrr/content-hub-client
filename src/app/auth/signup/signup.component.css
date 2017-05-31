@@ -1,8 +1,22 @@
-
+.background-image{
+  background: url(/./assets/images/background4.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  width:100vw;
+  height:100vh;
+  z-index:-100;
+  position: fixed;
+}
 .container-fluid{
   display: flex;
   align-items: center;
-  background-color: #161f42;
   height:100vh; /*100vh*/
   padding-left: 0px;
   padding-right:0px;
@@ -49,19 +63,20 @@
 }
 .btn-signin {
   width: 100%;
-    /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
-    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-    padding: 0px;
-    font-weight: 700;
-    font-size: 16px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
+  background-color: #1C2833;
+  padding: 0px;
+  font-size: 16px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
+}
+input:focus{
+  border: 2px solid #E74C3C;
+  box-shadow: #E74C3C;
 }
