@@ -24,8 +24,6 @@ export class RedditComponent implements OnChanges {
   constructor(private session: SessionService,) { }
 
   ngOnChanges() {
-
-    console.log("url", this.reddit.data);
   }
   onQuote () {
     this.onFavorite.emit("reddit");

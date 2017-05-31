@@ -38,11 +38,17 @@
       </div><!-- content-wrapper *ngIf -->
     </div><!-- content -->
     <div class="col-xs-12 col-sm-3 right-side">
-      <button class="edit-button" (click)="edit()">settings</button>
-      <div *ngIf="displayEdit">
-        <button class="delete-button" (click)="delete()">delete profile</button>
-        <md-slide-toggle>Slide me!</md-slide-toggle>
-      </div><!-- displayEdit -->
+
+        <button *ngIf="visible" class="delete-button" (click)="delete()">delete profile</button>
+        <div *ngIf="!visible">
+          <p>
+            CONFIRM DELETE
+          </p>
+          <button (click)="yes()">YES</button><button (click)="no()">NO</button>
+        </div>
+
+
+
     </div><!-- right-side -->
   </div><!-- row -->
 </div><!-- container-fluid -->
