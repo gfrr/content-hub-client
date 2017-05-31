@@ -11,6 +11,10 @@
   width: 30px;
   height: 30px;
 }
+.icon:hover{
+  cursor: pointer;
+}
+
 .reddit-info-wrapper {
   display: flex;
   align-items: center;
