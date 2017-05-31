@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SessionService } from '../services/session.service';
 
 
-
 @Component({
   selector: 'app-youtube',
   templateUrl: './youtube.component.html',
@@ -15,7 +14,6 @@ export class YoutubeComponent implements OnInit {
   @Output() onFavorite = new EventEmitter<string>();
   constructor(
     private session: SessionService,
-
   ) { }
 
   ngOnInit() {
@@ -41,6 +39,7 @@ export class YoutubeComponent implements OnInit {
   save(data){
     this.session.save({
       source: "YOUTUBE",
+      uniqueRef: data,
       data: {
         video: data
       },
@@ -49,7 +48,6 @@ export class YoutubeComponent implements OnInit {
     ).subscribe(()=>{
       console.log("item saved");
       this.onQuote();
-
     });
   }
 }
