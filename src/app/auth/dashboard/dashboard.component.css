@@ -117,3 +117,18 @@ h4{
   display:flex;
 }
 /*TUMBLR END*/
+
+.yes-delete-btn{
+  margin-left: 3px;
+  border:0px;
+  background-color: #1C2833;
+}
+.no-delete-btn{
+  margin-left: 3px;
+  border:0px;
+  background-color: #1C2833;
+}
+
+.tag-input-wrapper{
+  height:70px;
+}

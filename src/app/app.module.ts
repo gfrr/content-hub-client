@@ -31,6 +31,7 @@ import { TagPipe } from './pipes/tag.pipe';
 import { ContentPipe } from './pipes/content.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,6 @@ import { ContentPipe } from './pipes/content.pipe';
     MdSlideToggleModule,
     MdRadioModule,
     MdSelectModule,
-    MdButtonToggleModule
   ],
   providers: [ SessionService],
   bootstrap: [AppComponent]

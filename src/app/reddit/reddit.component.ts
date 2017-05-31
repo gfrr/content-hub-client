@@ -21,13 +21,15 @@ export class RedditComponent implements OnChanges {
             this.onQuote();
         }
   };
-  constructor(private session: SessionService,) { }
+  constructor(private session: SessionService,) {
+   }
 
   ngOnChanges() {
   }
   onQuote () {
     this.onFavorite.emit("reddit");
   }
+
 
 
   save(data){
