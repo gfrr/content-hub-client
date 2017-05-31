@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
@@ -23,11 +23,12 @@ import { RedditComponent } from './reddit/reddit.component';
 import { TumblrComponent } from './tumblr/tumblr.component';
 import { EditComponent } from './auth/dashboard/edit/edit.component';
 import { DeleteComponent } from './auth/dashboard/delete/delete.component';
-// import { TagInputModule } from 'ng2-tag-input';
+import { TagInputModule } from 'ng2-tag-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { MaterialModule,MdButtonToggleModule, MdNativeDateModule, MdSlideToggleModule, MdRadioModule, MdSelectModule} from '@angular/material';
 import { TagPipe } from './pipes/tag.pipe';
+import { ContentPipe } from './pipes/content.pipe';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { TagPipe } from './pipes/tag.pipe';
     EditComponent,
     DeleteComponent,
     TagPipe,
-    // Ng2TweetModule
+    ContentPipe,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +58,7 @@ import { TagPipe } from './pipes/tag.pipe';
     HttpModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    // TagInputModule,
+    TagInputModule,
     MaterialModule,
     MdNativeDateModule,
     ReactiveFormsModule,
@@ -65,9 +66,6 @@ import { TagPipe } from './pipes/tag.pipe';
     MdRadioModule,
     MdSelectModule,
     MdButtonToggleModule
-    // BrowserAnimationsModule,
-    // MdSelectModule,
-    // MdRadioModule
   ],
   providers: [ SessionService],
   bootstrap: [AppComponent]

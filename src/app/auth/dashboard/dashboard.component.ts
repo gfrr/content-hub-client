@@ -14,8 +14,9 @@ export class DashboardComponent implements OnInit {
   displayEdit: boolean = false;
   user: any;
   visible: boolean = true;
+  filtered: any = undefined;
   public searches :any;
-
+  autocompleteItems = [];
   favorites: any;
   favoritesData: any = [];
   constructor(
@@ -24,6 +25,17 @@ export class DashboardComponent implements OnInit {
     public dialog: MdDialog
   ) { }
 
+  onItemAdded(event){
+    console.log(event.value);
+    if(typeof(this.filtered)=="undefined") this.filtered = [];
+    console.log(event.value.substring(1));
+    this.filtered.push(event.value.substring(1));
+  }
+  onItemRemoved(event){
+    console.log(event.value);
+    this.filtered.splice(this.filtered.indexOf(event.value), 1);
+    if(this.filtered.length < 1) this.filtered = undefined;
+  }
 
 
   remove(id, index){
@@ -37,6 +49,7 @@ export class DashboardComponent implements OnInit {
     this.favorites.forEach((favorite)=>{
       this.session.getFavorite(favorite).subscribe(result=> {
         this.favoritesData.push(result);
+
       });
 
     })
@@ -47,7 +60,7 @@ export class DashboardComponent implements OnInit {
     this.favorites = this.session.getFavorites();
     this.generateFavs();
     this.searches = this.session.getSearches();
-
+    this.autocompleteItems = this.searches.map((elem)=> "#"+elem);
 
   }
 
@@ -68,6 +81,7 @@ export class DashboardComponent implements OnInit {
   removeTag(query){
     this.session.removeSearch({search: query}).subscribe(result=>{
       this.searches = this.session.getSearches();
+      this.autocompleteItems = this.searches.map((elem)=> "#"+elem);
     });
   }
 }

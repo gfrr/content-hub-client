@@ -2,14 +2,30 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-3 search-section">
-      <h4>Your searches:</h4>
+      <div>
+            <h3>Filter your content by hashtag</h3>
+            <tag-input [ngModel]="[]"
+                       [theme]="'dark'"
+                       [onlyFromAutocomplete]=true
+                       [addOnBlur]="true"
+                       [clearOnBlur]="true"
+                       (onAdd)="onItemAdded($event)"
+                       (onRemove)="onItemRemoved($event)">
+
+                <tag-input-dropdown [autocompleteItems]="autocompleteItems">
+                </tag-input-dropdown>
+            </tag-input>
+        </div>
+     <br />
+      <h4>manage your search history searches:</h4>
       <div class="search-tags" *ngFor="let search of searches; let i=index">
-        <a *ngIf="i<10" (click)="searchThis(search)">#{{search}} </a> <span (click)="removeTag(search)" class="glyphicon glyphicon-remove"></span>
+        <a (click)="searchThis(search)">#{{search}} </a> <span (click)="removeTag(search)" class="glyphicon glyphicon-remove"></span>
       </div><!-- search-tags -->
     </div><!-- search-section -->
     <div class="col-xs-12 col-sm-8 content">
+
       <div class="content-wrapper" *ngIf="favorites.length>0">
-        <div *ngFor="let favorite of favoritesData; let i = index">
+        <div *ngFor="let favorite of favoritesData | content:filtered; let i = index">
           <div class="youtube-dash">
             <div class="yt-wrapper" *ngIf="favorite.content.source == 'YOUTUBE'">
               <app-youtube [video]=favorite.content.data.video [showButtons]=false></app-youtube>
