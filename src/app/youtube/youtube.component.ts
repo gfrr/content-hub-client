@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SessionService } from '../services/session.service';
+
+
 @Component({
   selector: 'app-youtube',
   templateUrl: './youtube.component.html',
@@ -37,6 +39,7 @@ export class YoutubeComponent implements OnInit {
   save(data){
     this.session.save({
       source: "YOUTUBE",
+      uniqueRef: data,
       data: {
         video: data
       },

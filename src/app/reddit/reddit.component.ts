@@ -51,6 +51,7 @@ export class RedditComponent implements OnChanges {
     }
     this.session.save({
       source: "REDDIT",
+      uniqueRef: data.data.permalink,
       data: {
         reddit: newReddit
       },

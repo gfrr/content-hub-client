@@ -37,6 +37,7 @@ export class TweetComponent implements OnInit {
   save(data){
     this.session.save({
       source: "TWITTER",
+      uniqueRef: data.id_str,
       data: {
         tweet: data
       },

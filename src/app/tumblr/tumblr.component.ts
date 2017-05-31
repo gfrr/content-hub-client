@@ -33,6 +33,7 @@ export class TumblrComponent implements OnInit {
   save(data){
     this.session.save({
       source: "TUMBLR",
+      uniqueRef: data.id,
       data: {
         tumblr: data
       },

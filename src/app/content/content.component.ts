@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
-// import { Ng2TweetService } from 'ng2-tweet/lib/index';
+
 
 @Component({
   selector: 'app-content',
@@ -40,17 +40,17 @@ export class ContentComponent implements OnInit {
   public videoId: string = "";
   public tweet: string = "";
   public reddit: any;
-  searchType: string = "popular";
-  index: number = 0;
-  indexVideo: number = 0;
-  indexTwitter: number = 0;
-  indexTumblr: number = 0;
-  indexReddit: number = 0;
-  hidden: boolean = true;
+  public searchType: string = "popular";
+  public index: number = 0;
+  public indexVideo: number = 0;
+  public indexTwitter: number = 0;
+  public indexTumblr: number = 0;
+  public indexReddit: number = 0;
+  public hidden: boolean = true;
 
-  isLoadingTweet: boolean = false;
-  isLoadingYt: boolean = false;
-  isLoadingReddit: boolean = false;
+  public isLoadingTweet: boolean = false;
+  public isLoadingYt: boolean = false;
+  public isLoadingReddit: boolean = false;
   isLoadingTumblr: boolean = false;
 
 
