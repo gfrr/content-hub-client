@@ -13,11 +13,9 @@ export class RedditComponent implements OnChanges {
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
   swipe(action){
     if(action === this.SWIPE_ACTION.RIGHT){
-      console.log("ayy swiped right");
       this.save(this.reddit);
     }
     if (action === this.SWIPE_ACTION.LEFT) {
-            console.log("ayy swiped left");
             this.onQuote();
         }
   };
@@ -58,7 +56,6 @@ export class RedditComponent implements OnChanges {
       searchTag: this.search
     }
     ).subscribe(()=>{
-      console.log("item saved");
       this.onQuote();
     });
   }
