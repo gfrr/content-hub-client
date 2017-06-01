@@ -14,11 +14,9 @@ export class TumblrComponent implements OnInit {
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
   swipe(action){
     if(action === this.SWIPE_ACTION.RIGHT){
-      console.log("ayy swiped right");
       this.save(this.tumblr);
     }
     if (action === this.SWIPE_ACTION.LEFT) {
-            console.log("ayy swiped left");
             this.onQuote();
         }
   };
@@ -40,7 +38,6 @@ export class TumblrComponent implements OnInit {
       searchTag: this.search
     }
     ).subscribe(()=>{
-      console.log("item saved");
       this.onQuote();
     });
   }
