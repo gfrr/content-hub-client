@@ -1,0 +1,52 @@
+/*navbar start*/
+.navbar{
+  width:100vw;
+  z-index:2;
+  margin:0px;
+  background-color: #1C2833;
+  height: 7vh;
+}
+ul li span{
+  color: #E74C3C;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+ul li a{
+  font-family: 'Patua One', cursive;
+  color: white;
+}
+#logout-button{
+  border:0px;
+  background-color: #1C2833;
+}
+.navbar-toggle:hover{
+  border:#E74C3C;
+  background-color:#E74C3C;
+}
+.collapsed{
+  /*background-color:#E74C3C;*/
+}
+.navbar-collapse{
+  background-color:#1C2833;
+}
+
+.navbar-right{
+  margin-right:15px;
+}
+
+.navbar-brand{
+  font-family: 'Patua One', cursive;
+  color: #E74C3C;
+}
+.navbar-header{
+  background-color: #1C2833;
+}
+.icon-bar{
+  color: white;
+}
+/*navbar end*/
+
+a:hover {
+  cursor:pointer;
+}

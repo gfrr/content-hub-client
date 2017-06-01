@@ -1,0 +1,11 @@
+
+<div class="swipe-container"  (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+  <iframe [src]="'https://www.youtube.com/embed/' + video | safe"  width="560" height="315" allowfullscreen></iframe>
+
+  <div class="icon-wrapper" *ngIf="showButtons">
+    <img (click)="onQuote()" class="icon" src="./assets/images/icons/005-arrows-4.png" alt="nahh">
+    <img (click)="save(video)" class="icon" src="./assets/images/icons/008-heart.png" alt="save to dashboard">
+
+  </div>
+
+</div>

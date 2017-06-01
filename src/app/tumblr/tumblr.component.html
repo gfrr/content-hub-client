@@ -1,0 +1,32 @@
+<div class="swipe-container"  (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+
+<div class="title">
+  {{tumblr.summary}}
+</div><!-- title -->
+<div class="text">
+  {{tumblr.text}}
+</div>
+
+<div class="tumblr-wrapper">
+  <div class="content-image">
+    <a target= "_blank" href="{{tumblr.photos[0].alt_sizes[3].url}}">
+      <img src="{{tumblr.photos[0].alt_sizes[3].url}}" alt="small_image">
+    </a>
+  </div>
+  <div class="content-wrapper">
+    <div class="tumblr-blog">
+      seen on tumblr: <a target= "_blank" href="https://{{tumblr.blog_name}}.tumblr.com">{{tumblr.blog_name}}</a>
+    </div>
+    <div class="date">
+      <a href="{{tumblr.short_url}}">{{tumblr.timestamp * 1000 | date}}</a>
+    </div>
+  </div><!-- content-wrapper -->
+</div><!-- tumblr-wrapper -->
+
+
+
+<div class="icon-wrapper" *ngIf="showButtons">
+  <img (click)="onQuote()" class="icon" src="./assets/images/icons/005-arrows-4.png" alt="nahh">
+  <img (click)="save(tumblr)" class="icon" src="./assets/images/icons/008-heart.png" alt="save to dashboard">
+</div>
+</div>

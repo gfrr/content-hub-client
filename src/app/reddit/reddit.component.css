@@ -1,0 +1,48 @@
+.reddit-pic-wrapper {
+  max-width:200px;
+  flex: 1;
+}
+.icon-wrapper{
+  margin-top:8px;
+  display: flex;
+  justify-content: space-around;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+}
+.icon:hover{
+  cursor: pointer;
+}
+
+.reddit-info-wrapper {
+  display: flex;
+  align-items: center;
+}
+.reddit-title{
+  margin-bottom: 3px;
+}
+.reddit-text{
+  flex: 2;
+  padding-left: 8px;
+}
+p {
+  font-size: 15px;
+  margin-bottom: 1px;
+}
+h4{
+  margin-bottom: 3px;
+  font-size: 17px;
+  font-weight: 500;
+}
+a{
+  color: #3a7baf;
+}
+.save-button{
+  border:0px;
+  background-color: #d27983;
+}
+.wat-button{
+  border:0px;
+  background-color: #d27983;
+}

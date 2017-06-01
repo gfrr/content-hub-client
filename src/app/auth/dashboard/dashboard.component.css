@@ -1,0 +1,148 @@
+.container-fluid{
+  margin-top:70px;
+  padding:0px;
+}
+.search-video-cont{
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding-top:1vh;
+  padding-bottom:1vh;
+  margin:0px;
+  padding-left: 0px;
+  padding-right:0px;
+  margin-bottom: 10px;
+  /*background-color:rgba(255, 0, 0, 0.1);*/
+}
+
+.remove:hover{
+  cursor: pointer;
+}
+
+.confirm {
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.search-tags{
+  padding:3px;
+  background-color: rgba(28, 40, 51, 1);
+  color: white;
+  border-radius: 10%;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+.search-tags span {
+  color: #E74C3C;
+}
+.white-span{
+  color:white;
+}
+
+h4{
+  font-weight:500;
+  color:black;
+  margin-bottom:5px;
+}
+.row{
+  margin:0px;
+  padding:0px;
+}
+.edit-button{
+  margin-bottom:0px;
+  border:0px;
+  background-color: #1C2833;
+}
+.delete-button{
+  margin-left: 3px;
+  border:0px;
+  background-color: #1C2833;
+}
+.remove-yt{
+  color: #1C2833;
+  position:relative;
+}
+.remove-tw{
+  color: #1C2833;
+  position:relative;
+}
+.remove-re{
+  color: #1C2833;
+  position:relative;
+}
+.remove-tu{
+  color: #1C2833;
+  position:relative;
+}
+.main-content{
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center;
+}
+.content{
+  display:flex;
+  justify-content: center;
+}
+.content-wrapper{
+  max-width:800px;
+}
+.right-side{
+  margin-top:10px;
+}
+/*youtube START*/
+.yt-wrapper{
+  width:100%;
+  height:auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  margin-top:10px;
+}
+/*youtube END*/
+
+/*TWEET START*/
+.tweet-wrapper{
+  display:flex;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+}
+/*TWEET END*/
+
+/*REDDIT START*/
+.reddit-wrapper{
+  display:flex;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+}
+/*REDDIT END*/
+
+/*TUMBLR START*/
+.tumblr-wrapper{
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) ;
+  padding: 10px;
+  margin-top:10px;
+  display:flex;
+}
+/*TUMBLR END*/
+
+.yes-delete-btn{
+  margin-left: 3px;
+  border:0px;
+  background-color: #1C2833;
+}
+.no-delete-btn{
+  margin-left: 3px;
+  border:0px;
+  background-color: #1C2833;
+}
+
+.tag-input-wrapper{
+  height:70px;
+}

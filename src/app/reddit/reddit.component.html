@@ -1,0 +1,33 @@
+
+<div class="swipe-container"  (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+  <div class="reddit-content-wrapper">
+    <div class="reddit-title">
+      <h4 class="title"><a target="_blank" href="https://reddit.com/{{reddit.data.permalink}}">{{reddit.data.title}}
+      </a></h4>
+    </div>
+
+    <div class="reddit-info-wrapper">
+      <div class="reddit-pic-wrapper">
+        <a href="{{reddit.data.url}}" target="_blank">
+          <img *ngIf="reddit.data.thumbnail == 'self'" class="pic" src="/assets/images/reddit.png" />
+          <img *ngIf="reddit.data.thumbnail != 'self'" class="pic" [src]="reddit.data.thumbnail | safe" >
+          <!-- <iframe [src]="'https://www.youtube.com/embed/' + video | safe"  width="560" height="315" allowfullscreen></iframe> -->
+        </a>
+      </div><!-- reddit-pic-wrapper -->
+      <div class="reddit-text">
+
+        <p class="reddit-author"><!-- reddit-author -->
+          submitted by <a target="_blank" href="https://reddit.com/u/{{reddit.data.author}}">{{reddit.data.author}} </a>
+          to <a target="_blank" href="https://reddit.com/{{reddit.data.subreddit_name_prefixed}}">{{reddit.data.subreddit_name_prefixed}}</a>
+          on {{reddit.data.created * 1000 | date}}</p>
+          <p>Score: <strong>{{reddit.data.score}}</strong></p>
+          <!-- subreddit-name -->
+
+        </div><!-- reddit-text -->
+      </div><!-- reddit-info-wrapper -->
+    </div><!-- reddi-content-wrapper -->
+    <div class="icon-wrapper" *ngIf="showButtons">
+      <img (click)="onQuote()" class="icon" src="./assets/images/icons/005-arrows-4.png" alt="nahh">
+      <img (click)="save(reddit)" class="icon" src="./assets/images/icons/008-heart.png" alt="save to dashboard">
+    </div>
+  </div>

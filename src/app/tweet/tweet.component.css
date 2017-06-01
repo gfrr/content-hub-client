@@ -1,0 +1,70 @@
+.icon-wrapper{
+  margin-top:8px;
+  display: flex;
+  justify-content: space-around;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+}
+.icon:hover{
+  cursor: pointer;
+}
+
+/*left side -- profile pic START*/
+.left-profile-pic{
+  padding-right: 10px;
+  padding-left:0px;
+}
+.twitter-pic{
+  min-width: 45px;
+  min-height: 45px;
+  margin-right: 5px;
+  margin-bottom:5px;
+  height: auto;
+  border-radius:10%;
+}
+/*left side -- profile pic END*/
+/*right side - tweet content START*/
+.tweet-wrapper{
+  padding-right:0px;
+}
+.right-tweet-content{
+  padding-left:0px;
+  padding-right:0px;
+}
+.username-date-wrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.twitter-username{/*username and @handle*/
+  line-height: 1.2;
+  margin-bottom:3px ;
+  font-weight: 600;
+  margin-right: 5px;
+}
+.twitter-handle{
+  margin-bottom:3px ;
+  margin-right: 5px;
+}
+.date{/*date*/
+  color: #28586f;
+  line-height: 1.2;
+  font-style: italic;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+.twitter-tweet{
+  color: #28586f;
+  font-size: 16px;
+  font-family: helvetica, sans-serif;
+  margin-bottom: -18px;
+}
+p{
+  margin:0px;
+}
+a{
+  color:black;
+}
+/*right side - tweet content END*/
