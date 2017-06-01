@@ -5,7 +5,7 @@ import 'rxjs/add/operator/catch';
 import { Router, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import jwtDecode from 'jwt-decode';
-
+import { environment } from '../../environments/environment';
 
 
 
@@ -17,7 +17,7 @@ export class SessionService implements CanActivate {
   public id: string;
   public priv: boolean;
 
-	BASE_URL: string = 'http://localhost:3000';
+	BASE_URL = environment.BASE_URL;
 
   constructor(
     private router: Router,

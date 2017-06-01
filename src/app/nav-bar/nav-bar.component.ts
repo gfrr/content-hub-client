@@ -10,8 +10,8 @@ import { SessionService } from '../services/session.service';
 export class NavBarComponent implements OnInit {
 
   constructor(
-  private session: SessionService,
-  private router: Router,
+  public session: SessionService,
+  public router: Router,
 ) { }
 
   ngOnInit() {
