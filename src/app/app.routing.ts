@@ -8,8 +8,8 @@ import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
 
 export const routes: Routes = [
-    { path: '', component: IndexComponent },
-    { path: "index", redirectTo: ""},
+    { path: 'index', component: IndexComponent },
+    { path: "", redirectTo: "index", pathMatch: "full"},
     { path: "signup", component: SignupComponent},
     { path: "dashboard", component: DashboardComponent, canActivate: [SessionService]},
     { path: "login", component: LoginComponent},

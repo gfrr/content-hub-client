@@ -17,7 +17,7 @@ export class SessionService implements CanActivate {
   public id: string;
   public priv: boolean;
 
-	BASE_URL = environment.BASE_URL;
+	BASE_URL = "https://content-hub.herokuapp.com";
 
   constructor(
     private router: Router,
@@ -51,9 +51,11 @@ export class SessionService implements CanActivate {
   }
 
   signup(user) {
+    console.log("signup called");
   	return this.http.post(`${this.BASE_URL}/signup`, user)
   		.map((response) => response.json())
   		.map((response) => {
+        console.log(response);
   			let token = response.token;
   			const user = response.user;
   			if (token) {
@@ -72,8 +74,10 @@ export class SessionService implements CanActivate {
   }
 
   login(user) {
+    console.log("login called");
     return this.http.post(`${this.BASE_URL}/login`, user)
         .map((response: Response) => {
+            console.log(response);
             // login successful if there's a jwt token in the response
             let token = response.json() && response.json().token;
             let user = response.json() && response.json().user;
@@ -93,6 +97,7 @@ export class SessionService implements CanActivate {
   }
 
   save(data){
+
     let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
 
     let options = new RequestOptions({ headers: headers });
